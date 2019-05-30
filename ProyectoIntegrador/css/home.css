@@ -1,0 +1,76 @@
+*{
+  box-sizing: border-box;
+}
+
+section.principal{
+  background-color: black;
+
+}
+h2.carrousel{
+  border-width: 15px #FFD700;
+  border-style: solid;
+  border-radius: 15px;
+  color: #FFD700;
+  background-color: white;
+  padding: 1%;
+  text-align: center;
+  width: 25%;
+  margin-top: 2%;
+
+}
+
+ul.footer{
+  background-color: rgba(255, 215, 0);
+  list-style-type: none;
+  overflow: hidden;
+  height: 150px;
+}
+img.footer-tmdb{
+  float: left;
+  list-style-type: none;
+  width: 105px;
+  height: 105px;
+  border-radius: 5px;
+  position: relative;
+  top: 22px;
+  right:15px;
+}
+li ul.redes{
+  overflow: hidden;
+}
+ul.redes{
+ float: left;
+ font-family: sans-serif;
+ font-size: 25px;
+ position: relative;
+ left:385px;
+ top:20px;
+}
+ul.descargas{
+  float: left;
+  font-family: sans-serif;
+  font-size: 25px;
+  position: relative;
+  left: 400px;
+  top:20px;
+}
+h6.titulos-footer{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+}
+li.nombres{
+  overflow: hidden;
+
+}
+ul.nombres-footer{
+  list-style-type: none;
+  float: left;
+  font-family: sans-serif;
+  position: relative;
+  left:450px;
+  margin: 45px;
+}
