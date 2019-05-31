@@ -21,25 +21,9 @@ a img.logo{
 header form input{
   margin-left: 10px;
 }
-
-/* header nav ul img.logo{
-  display: block;
-  width: 105px;
-  height: 105px;
-  border-radius: 5px;
-  position: absolute;
+header div.login button{
+  margin-left: 5px;
 }
-nav ul li.imagen{
-  list-style-type: none;
-  float: left;
-  margin: 2%;
-  top: 25%;
-  bottom: 25%;
-  height: 50%;
-  float: left;
-  list-style-type: none;
-}
-
 
 /* header */
 
@@ -59,8 +43,10 @@ h2.carrousel{
 }
 /*main*/
 /* footer */
-ul.footer{
+footer {
   background-color:#F9C719;
+}
+ul.footer{
   list-style-type: none;
   overflow: hidden;
   height: 150px;
