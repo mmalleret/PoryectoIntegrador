@@ -1,6 +1,38 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+}
+/* header */
+
+header nav{
+  background-color:#F9C719;
+  font-family: sans-serif;
+  height:100px;
+}
+a img.logo{
+  height: 100px;
+  position: relative;
+  top:15px;
+  left:-10px;
+}
+header form input{
+  margin-left: 10px;
+}
+header div.login button{
+  margin-left: 5px;
+}
+div.bd-example{
+  overflow: hidden;
+
+}
+/* header */
+
 /*main  */
 
-h2.carrousel{
+/* h2.carrousel{
   border-width: 15px #FFD700;
   border-style: solid;
   border-radius: 15px;
@@ -9,7 +41,7 @@ h2.carrousel{
   padding: 1%;
   text-align: center;
   width: 25%;
-  margin-top: 2%;
+  margin-top: 2%; */
 
 }
 /*main*/
