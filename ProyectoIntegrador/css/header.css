@@ -1,0 +1,41 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+}
+/* header */
+
+header nav{
+  background-color:#F9C719;
+  font-family: sans-serif;
+  height:100px;
+}
+a img.logo{
+  height: 90px;;
+  position: relative;
+  top:5px;
+  left:-10px;
+}
+header form input{
+  margin-left: 10px;
+}
+header div.login button{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/*header*/
+/*alerta*/
+
+.alert {
+  position: absolute;
+  top: 25px;
+  width: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: none;
+  z-index: 10;
+}
+/*alerta*/

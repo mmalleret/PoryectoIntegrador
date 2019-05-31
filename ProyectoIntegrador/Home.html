@@ -12,11 +12,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- //css// -->
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 
   </head>
   <body>
 
-
+    <div class="alert alert-light" role="alert">
+      Ey Capo! Minimo 3 caracteres!!!!
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -60,7 +64,7 @@
 
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
-       <a class="navbar-brand" href="#">Navbar</a>
+       <img src="imagenes/logo.png" alt="" height="100px">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
         </button>
@@ -75,7 +79,7 @@
           Géneros
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="listado.html">Acción</a>
+          <a class="dropdown-item" href="listado.html?genero=accion">Acción</a>
           <a class="dropdown-item" href="listado.html">Ciencia Ficción y Fantasía</a>
           <a class="dropdown-item" href="listado.html">Clásicas</a>
           <a class="dropdown-item" href="listado.html">Comedias</a>
@@ -87,9 +91,9 @@
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="resultado.html" method="get">
+    <form class="form-inline my-2 my-lg-0 form-buscar" action="resultado.html" method="get">
       <i class="fas fa-search"></i>
-      <input class="form-control mr-sm-2" type="text" name="buscador" placeholder="Buscar" aria-label="Search">
+      <input id="buscador"class="form-control mr-sm-2" type="text" name="buscador" placeholder="Buscar" aria-label="Search">
       <button class="btn btn-outline-dark" type="submit">Buscar</button>
     </form>
     <!-- Button trigger modal -->

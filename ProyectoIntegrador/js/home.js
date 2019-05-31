@@ -2,31 +2,35 @@ window.onload = function(){
 
    // boton de busqueda//
 
-   document.querySelector("form").onsubmit = function(e) {
-     var buscadorInput = document.querySelector("input")
-
+   document.querySelector(".form-buscar").onsubmit = function(e) {
+     var buscadorInput = document.querySelector("#buscador")
      if (buscadorInput.value.length < 3) {
        e.preventDefault()
-       setTimeout('alert("Capo! minimo 3 caracteres")',3000)
+       document.querySelector(".alert").style.display = "block"
+       setTimeout(function() {
+         document.querySelector(".alert").style.display = "none"
+       },3000)
      }}
+     // Boton buscador
    // var queryString = new URLSearchParams(location.search)
    //
-   // var busco = queryString.get("buscador")
+   // var busco = queryString.get("#buscador")
    //
-   // fetch("https://api.giphy.com/v1/gifs/search?api_key=lp7wQ6914aPRmDI6HePRPpQeZXyxLFkU&q=" + busco + "&limit=25&offset=0&rating=G&lang=en")
+   // fetch("https://api.themoviedb.org/3/search/movie?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&query="+ busco +"&page=1&include_adult=false")
    //   .then(function(respuesta) {
    //     return respuesta.json()
    //   })
    //   .then(function(informacion) {
-   //     var arrayDeGifs = informacion.data
+   //     var arrayDePelis = informacion.results
    //
-   //     for (var i = 0; i < arrayDeGifs.length; i++) {
-   //       var titulo =  arrayDeGifs[i].title
-   //       var url = arrayDeGifs[i].images.original.url
-   //       var id = arrayDeGifs[i].id
+   //     for (var i = 0; i < arrayDePelis.length; i++) {
+   //       var titulo =  arrayDePelis[i].title
+   //       var url = arrayDePelis[i].poster_path
+   //       var id = arrayDePelis[i].id
+   //       var resumen = arrayDePelis[i].backdrop_path
    //
-   //       document.querySelector("div").innerHTML += "<p> <a href=detalleGif.html?idGif=" + id + ">" + titulo + "</a></p>"
-   //       document.querySelector("div").innerHTML += "<img src=" + url + " >"
+   //       document.querySelector(".peliculas").innerHTML += "<p> <a href=resultados.html?idPelis=" + id + ">" + titulo + "</a></p>"
+   //       document.querySelector(".peliculas").innerHTML += "<img src=" + url + " >"
    //     }
    //   })
    //   .catch(function(error) {
