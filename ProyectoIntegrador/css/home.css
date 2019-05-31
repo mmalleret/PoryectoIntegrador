@@ -12,6 +12,10 @@ header nav{
   font-family: sans-serif;
   height:100px;
 }
+header form input{
+  margin-left: 10px;
+}
+
 /* header nav ul img.logo{
   display: block;
   width: 105px;
@@ -29,16 +33,6 @@ nav ul li.imagen{
   float: left;
   list-style-type: none;
 }
-nav ul li.menu {
-  list-style-type: none;
-  text-decoration: none;
-  float: right;
-  margin-right: 2%;
-  padding: 1%;
-  top: 75%;
-}
-a { text-decoration: none;
-} */
 
 
 /* header */
