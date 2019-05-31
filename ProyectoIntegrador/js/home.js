@@ -1,5 +1,5 @@
 window.onload = function(){
-   fetch("https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=%3C%3Capi_key%3E%3E")
+   fetch("https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=9fe1abda2acd785b6fc8d949de634904")
    .then(function(respuesta){
      return respuesta.json()
    })
@@ -15,7 +15,7 @@ window.onload = function(){
      console.log("Error" + error)
    })
    // boton de busqueda//
-   
+
    document.querySelector("form").onsubmit = function(e) {
      var buscadorInput = document.querySelector("input")
 
