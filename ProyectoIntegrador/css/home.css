@@ -6,20 +6,15 @@ main section.principal{
   background-color: black;
 }
 /* header */
-header{
-  position: relative;
-  overflow: hidden;
-
-}
-nav.navbar {
+header nav {
   height: 100px;
+  width: 100%;
   background-color:rgba(255, 215, 0);
   font-family: sans-serif;
+  overflow: hidden;
 }
 header nav ul img.logo{
   display: block;
-  float: left;
-  list-style-type: none;
   width: 105px;
   height: 105px;
   border-radius: 5px;
@@ -30,7 +25,10 @@ nav ul li.imagen{
   float: left;
   margin: 2%;
   top: 25%;
+  bottom: 25%;
   height: 50%;
+  float: left;
+  list-style-type: none;
 }
 nav ul li.menu {
   list-style-type: none;
@@ -43,7 +41,9 @@ nav ul li.menu {
 a { text-decoration: none;
 }
 
+
 /* header */
+/*main  */
 
 h2.carrousel{
   border-width: 15px #FFD700;
@@ -57,7 +57,8 @@ h2.carrousel{
   margin-top: 2%;
 
 }
-
+/*main*/
+/* footer */
 ul.footer{
   background-color: rgba(255, 215, 0);
   list-style-type: none;
@@ -113,3 +114,4 @@ ul.nombres-footer{
   left:450px;
   margin: 45px;
 }
+/*footer*/
