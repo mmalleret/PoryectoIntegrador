@@ -12,7 +12,7 @@ header nav{
   font-family: sans-serif;
   height:100px;
 }
-img.logo{
+a img.logo{
   height: 90px;;
   position: relative;
   top:5px;
