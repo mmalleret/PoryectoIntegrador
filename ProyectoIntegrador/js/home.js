@@ -1,19 +1,5 @@
 window.onload = function(){
-   fetch("https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=9fe1abda2acd785b6fc8d949de634904")
-   .then(function(respuesta){
-     return respuesta.json()
-   })
-   .then(function(informacion){
-       console.log(informacion);
-       var titulo=informacion.data.title
-       var url=informacion.data.poster_path
 
-       document.querySelector("carrousel").innerHTML += "<article><h2>" + titulo + "</h2><img src='" + url +  "'></article>"
-
-   })
-   .catch(function(error){
-     console.log("Error" + error)
-   })
    // boton de busqueda//
 
    document.querySelector("form").onsubmit = function(e) {
@@ -46,7 +32,28 @@ window.onload = function(){
    //   .catch(function(error) {
    //     console.log("Error: " + error);
    //   })
+ //API peliculas populares//
+ fetch("https://api.themoviedb.org/3/movie/popular?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&page=1")
+ .then(function(respuesta){
+   return respuesta.json()
+ })
+ .then(function(informacion){
+     console.log(informacion);
+     for(i=0; i<3; i++){
+     var titulo=informacion.results[i].title
+     var url=informacion.results[i].poster_path
+     document.querySelector("#carrousel-populares").innerHTML += '<div id="peli'+i+'" class="carousel-item"><img src="https://image.tmdb.org/t/p/original/'+url+'" class="d-block w-100" alt=""><div class="carousel-caption d-none d-md-block"><h3>'+titulo+'</h3></div></div>'
 
+     if (i == 0) {
+       document.querySelector('#peli0').classList.add('active')
+     }
+
+
+   }
+ })
+ .catch(function(error){
+   console.log("Error" + error)
+ })
 
 
 
