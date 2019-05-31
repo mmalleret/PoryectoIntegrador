@@ -18,34 +18,12 @@ a img.logo{
   top:5px;
   left:-10px;
 }
-/* header nav ul img.logo{
-  display: block;
-  width: 105px;
-  height: 105px;
-  border-radius: 5px;
-  position: absolute;
+header form input{
+  margin-left: 10px;
 }
-nav ul li.imagen{
-  list-style-type: none;
-  float: left;
-  margin: 2%;
-  top: 25%;
-  bottom: 25%;
-  height: 50%;
-  float: left;
-  list-style-type: none;
+header div.login button{
+  margin-left: 5px;
 }
-nav ul li.menu {
-  list-style-type: none;
-  text-decoration: none;
-  float: right;
-  margin-right: 2%;
-  padding: 1%;
-  top: 75%;
-}
-a { text-decoration: none;
-} */
-
 
 /* header */
 
@@ -65,8 +43,10 @@ h2.carrousel{
 }
 /*main*/
 /* footer */
-ul.footer{
+footer {
   background-color:#F9C719;
+}
+ul.footer{
   list-style-type: none;
   overflow: hidden;
   height: 150px;
