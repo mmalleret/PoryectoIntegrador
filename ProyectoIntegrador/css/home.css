@@ -8,9 +8,15 @@ body{
 /* header */
 
 header nav{
-  background-color:rgba(255, 215, 0);
+  background-color:#F9C719;
   font-family: sans-serif;
   height:100px;
+}
+img.logo{
+  height: 90px;;
+  position: relative;
+  top:5px;
+  left:-10px;
 }
 /* header nav ul img.logo{
   display: block;
@@ -60,7 +66,7 @@ h2.carrousel{
 /*main*/
 /* footer */
 ul.footer{
-  background-color: rgba(255, 215, 0);
+  background-color:#F9C719;
   list-style-type: none;
   overflow: hidden;
   height: 150px;
