@@ -24,24 +24,28 @@ header form input{
 header div.login button{
   margin-left: 5px;
 }
-div.bd-example{
-  overflow: hidden;
 
-}
 /* header */
 
 /*main  */
 
-/* h2.carrousel{
-  border-width: 15px #FFD700;
+h1.titulos-peliculas{
+  font-family: sans-serif;
+  font-size: 2vh;
+  border-width: 7px #F9C719;
   border-style: solid;
   border-radius: 15px;
-  color: #FFD700;
+  color: #F9C719;
   background-color: white;
   padding: 1%;
   text-align: center;
-  width: 25%;
-  margin-top: 2%; */
-
+  width: 30%;
+  margin-top: 2%;
+}
+div.bd-example{
+  overflow: hidden;
+  width: 20%;
+  position: relative;
+  left: 37%;
 }
 /*main*/
