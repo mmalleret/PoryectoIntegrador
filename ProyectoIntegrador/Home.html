@@ -36,8 +36,8 @@
             <form class="" action="index.html" method="post">
                 <!--formulario login-->
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Dirreción de Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  <label for="inputName">Nombre de usuario</label>
+                  <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter User name" required>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Contraseña</label>
@@ -64,7 +64,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-outline-warning">Guardar Cambios</button>
+            <button id="singIn" type="button" class="btn btn-outline-warning">
+              <a id="botonDeLogin"href="home.html">Sign in</a></button>
           </div>
         </div>
       </div>
@@ -84,8 +85,8 @@
                 <!--formulario login-->
 
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Dirreción de Email</label>
-                  <input type="email" class="form-control" id="ejemploInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  <label for="inputName">Nombre de usuario</label>
+                  <input type="text" class="form-control" id="ejemploinputName" aria-describedby="emailHelp" placeholder="Enter User name" required>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Contraseña</label>
@@ -130,8 +131,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-outline-warning">Guardar Cambios</button>
-            <button type="submit" class="btn btn-outline-dark">Sign in</button>
+            <button id="segundoSign"type="submit" class="btn btn-outline-warning">
+              <a id="botonDeLogin" href="home.html">Sign in</a></button>
           </div>
         </div>
       </div>
@@ -155,18 +156,30 @@
           Géneros
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="listado.html?genero=accion">Acción</a>
-          <a class="dropdown-item" href="listado.html">Ciencia Ficción y Fantasía</a>
-          <a class="dropdown-item" href="listado.html">Clásicas</a>
-          <a class="dropdown-item" href="listado.html">Comedias</a>
-          <a class="dropdown-item" href="listado.html">Deportes</a>
-          <a class="dropdown-item" href="listado.html">Dramas</a>
-          <a class="dropdown-item" href="listado.html">Infantiles y Familiares</a>
-          <a class="dropdown-item" href="listado.html">Romance</a>
-          <a class="dropdown-item" href="listado.html">Terror</a>
+          <a class="dropdown-item" href="listado.html?genero=">Acción</a>
+          <a class="dropdown-item" href="listado.html?genero=">Aventura</a>
+          <a class="dropdown-item" href="listado.html?genero=">Animacion</a>
+          <a class="dropdown-item" href="listado.html?genero=">Ciencia Ficcion</a>
+          <a class="dropdown-item" href="listado.html?genero=">Comedia</a>
+          <a class="dropdown-item" href="listado.html?genero=">Crimen</a>
+          <a class="dropdown-item" href="listado.html?genero=">Documentales</a>
+          <a class="dropdown-item" href="listado.html?genero=">Drama</a>
+          <a class="dropdown-item" href="listado.html?genero=">Familiares</a>
+          <a class="dropdown-item" href="listado.html?genero=">Fantasía</a>
+          <a class="dropdown-item" href="listado.html?genero=">Guerra</a>
+          <a class="dropdown-item" href="listado.html?genero=">Historicas</a>
+          <a class="dropdown-item" href="listado.html?genero">Misterio</a>
+          <a class="dropdown-item" href="listado.html?genero=">Musicales</a>
+          <a class="dropdown-item" href="listado.html?genero=">Programas de TV</a>
+          <a class="dropdown-item" href="listado.html?genero=">Romance</a>
+          <a class="dropdown-item" href="listado.html?genero=">Terror</a>
+          <a class="dropdown-item" href="listado.html?genero=">Thriller</a>
         </div>
       </li>
     </ul>
+    <div class="nombreDeUsuario">
+
+    </div>
     <form class="form-inline my-2 my-lg-0 form-buscar" action="resultado.html" method="get">
       <i class="fas fa-search"></i>
       <input id="buscador"class="form-control mr-sm-2" type="text" name="buscador" placeholder="Buscar" aria-label="Search">
@@ -174,12 +187,12 @@
     </form>
     <!-- Button trigger modal -->
     <div class="login">
-      <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
-        Login
+      <button id="botonLog" type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
+      Login
       </button>
     </div>
     <div class="Registrarse">
-      <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#ejemplo">
+      <button id="botonRegist" type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#ejemplo">
         Registrarse
       </button>
     </div>

@@ -24,6 +24,10 @@ header form input{
 header div.login button{
   margin-left: 5px;
 }
+#botonDeLogin{
+  text-decoration: none;
+  color: black;
+}
 
 /* header */
 

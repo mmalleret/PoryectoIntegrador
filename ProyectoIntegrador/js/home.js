@@ -11,7 +11,18 @@ window.onload = function(){
          document.querySelector(".alert").style.display = "none"
        },3000)
      }}
-     
+     // var nombre = document.querySelector("#exampleInputName");
+     //
+     // if (document.querySelector("#singIn").onclick || document.querySelector("#segundoSign").onclick){
+     //   var login = document.querySelector("#botonLog")
+     //   login.style.disply= "none"
+     //   var registro = document.querySelector("#botonRegist")
+     //   resgitro.style.display= "none"
+     //   document.querySelector(".login").innerHTML+= "Hi "
+     //   document.querySelector(".login").innerHTML+= "<i class="fas fa-film"></i>" + nombre
+     // } else {
+     //   false}
+
      // Boton buscador
 //    var queryString = new URLSearchParams(window.location.search);
 //
