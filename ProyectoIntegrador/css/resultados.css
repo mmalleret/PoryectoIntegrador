@@ -4,5 +4,9 @@ main {
 div .pelis {
   float: left;
   margin:2%;
+
+}
+#modal-example {
+  font-family: sans-serif;
   
 }
