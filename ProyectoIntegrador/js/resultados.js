@@ -42,7 +42,7 @@ window.onload = function(){
            })
          }
        })
-       .catch(function(error) {
+        .catch(function(error) {
          console.log("Error: " + error);
        })
 
