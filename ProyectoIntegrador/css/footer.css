@@ -6,6 +6,7 @@ ul.footer{
   list-style-type: none;
   overflow: hidden;
   height: 150px;
+  margin-bottom: 0;
 }
 img.footer-tmdb{
   float: left;
