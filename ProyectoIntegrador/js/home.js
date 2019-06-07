@@ -11,6 +11,7 @@ window.onload = function(){
          document.querySelector(".alert").style.display = "none"
        },3000)
      }}
+
      // login
      var nombre = document.querySelector("#exampleInputName");
 
@@ -37,10 +38,7 @@ window.onload = function(){
        return respuesta.json()
      })
      .then(function(data) {
-       console.log(data);
-       console.log(data.results);
        var arrayDePelis = data.results
-       console.log(arrayDePelis);
        console.log(arrayDePelis.length);
 
        for (var i = 0; i < arrayDePelis.length; i++) {
@@ -59,7 +57,7 @@ window.onload = function(){
        console.log("Error: " + error);
      })
      // boton buscador //
-     
+
  //API peliculas populares//
  fetch("https://api.themoviedb.org/3/movie/popular?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&page=1")
  .then(function(respuesta){

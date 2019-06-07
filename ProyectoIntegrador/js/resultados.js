@@ -18,42 +18,32 @@ window.onload = function(){
            var titulo =  arrayDePelis[i].title
            var poster = arrayDePelis[i].poster_path
            var id = arrayDePelis[i].id
-           var resumen = arrayDePelis[i].backdrop_path
+           var resumen = arrayDePelis[i].overview
            var fecha = arrayDePelis[i].release_date
            var puntos = arrayDePelis[i].vote_average
 
-           document.querySelector(".pelis").innerHTML +='<div><img src="https://image.tmdb.org/t/p/original/'+ poster +'" alt=""><div><h3>'+titulo+'</h3></div></div>'
+           document.querySelector(".pelis").innerHTML +='<div class="pelis"><a class="poster" posArray="' + i + '" idPelicula="' + id + '" href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original/'+ poster +'" width= "300px" alt=""></a></div>'
+
+         }
+
+         var posters = document.querySelectorAll(".poster")
+
+         for (var i = 0; i < posters.length; i++) {
+           posters[i].addEventListener("click", function() {
+             id = this.getAttribute("idPelicula")
+             pos = this.getAttribute("posArray")
+
+             pelicula = arrayDePelis[pos]
+             titulo = pelicula.title
+             resumen = pelicula.overview
+
+             document.querySelector(".titulo-pelicula").innerHTML = titulo
+             document.querySelector(".resumen-pelicula").innerHTML = resumen
+           })
          }
        })
        .catch(function(error) {
          console.log("Error: " + error);
        })
-       // boton buscador //
 
-
-
-// var queryString = new URLSearchParams(location.search)
-//
-// var busco = queryString.get("#buscador")
-//
-// fetch("https://api.themoviedb.org/3/search/movie?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&query="+ busco +"&page=1&include_adult=false")
-//   .then(function(respuesta) {
-//     return respuesta.json()
-//   })
-//   .then(function(informacion) {
-//     var arrayDePelis = informacion.results
-//
-//     for (var i = 0; i < arrayDePelis.length; i++) {
-//       var titulo =  arrayDePelis[i].title
-//       var url = arrayDePelis[i].poster_path
-//       var id = arrayDePelis[i].id
-//       var resumen = arrayDePelis[i].backdrop_path
-//
-//       document.querySelector(".peliculas").innerHTML += "<p> <a href=resultados.html?idPelis=" + id + ">" + titulo + "</a></p>"
-//       document.querySelector(".peliculas").innerHTML += "<img src=" + url + " >"
-//     }
-//   })
-//   .catch(function(error) {
-//     console.log("Error: " + error);
-//   })
 }
