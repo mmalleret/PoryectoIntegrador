@@ -41,6 +41,7 @@ header div.login button{
 }
 /*alerta*/
 
+/*main section*/
 h1.titulos-peliculas{
   font-family: sans-serif;
   font-size: 3vh;
@@ -53,8 +54,30 @@ h1.titulos-peliculas{
   text-align: center;
   width: 25%;
   margin-top: 2%;
+  margin-bottom: 2%;
   position: relative;
   left: 37.5%;
 
 }
 /*main section*/
+
+/*****MEDIA QUERIES*****/
+@media only screen and (max-width:320px){
+h1.titulos-peliculas{
+  font-size: 4vh;
+  width: 83%;
+  position: relative;
+  left: 9%;
+  margin-top: 7%;
+}
+}
+@media only screen and (min-width:421px) and (max-width:800px){
+h1.titulos-peliculas{
+  font-size:4vh;
+  width: 60%;
+  position: relative;
+  left: 20.5%;
+  margin-top:5%;
+  margin-bottom: 5%;
+}
+}
