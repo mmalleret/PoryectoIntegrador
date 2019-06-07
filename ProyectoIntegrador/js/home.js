@@ -40,11 +40,11 @@ window.onload = function(){
        var resumen = arrayDePelis[i].overview
        var fecha = arrayDePelis[i].release_date
        var puntos = arrayDePelis[i].vote_average
-     if (i == 0) {
-       document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></a></div></li>'
-      }else {
-        document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"><</div></li>'
-      }
+       if (i == 0) {
+         document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></a></div></li>'
+        }else {
+          document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></a></div></li>'
+        }
      }
      var posters = document.querySelectorAll(".poster")
 
@@ -59,9 +59,9 @@ window.onload = function(){
 
          document.querySelector(".el-titular").innerHTML = titulo
          document.querySelector(".el-resumen").innerHTML = resumen
-
+         })
+     }
    })
- }
     .catch(function(error){
       console.log("Error" + error)
    })
@@ -73,6 +73,7 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
   })
   .then(function(informacion){
     console.log(informacion);
+    var arrayDePelis = informacion.results
     for(i=0; i<12; i++){
       var url=informacion.results[i].poster_path
       console.log(url);
@@ -110,6 +111,4 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
 
 
 
-}
-})
 }
