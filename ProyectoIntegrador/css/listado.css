@@ -1,0 +1,12 @@
+main {
+  overflow: hidden;
+}
+div .generos {
+  float: left;
+  margin:2%;
+
+}
+#modal-example {
+  font-family: sans-serif;
+
+}
