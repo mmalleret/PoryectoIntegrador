@@ -23,54 +23,45 @@ window.onload = function(){
      // } else {
      //   false}
 
-     // Boton buscador
-//    var queryString = new URLSearchParams(window.location.search);
-//
-//    var buscar = queryString.get("#buscador");
-//
-//    var url = "https://api.themoviedb.org/3/search/movie?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&query="+ buscar +"&page=1&include_adult=false"
-//
-//    fetch(url)
-//
-//      .then(function(respuesta) {
-//        return respuesta.json()
-//      })
-//      .then(function(informacion) {
-//        console.log(informacion.results);
-//        var arrayDePelis = informacion.results
-//
-//        for (var i = 0; i < arrayDePelis.length; i++) {
-//          var titulo =  arrayDePelis[i].title
-//          var url = arrayDePelis[i].poster_path
-//          var id = arrayDePelis[i].id
-//          var resumen = arrayDePelis[i].backdrop_path
-//
-//          document.querySelector(".peliculas").innerHTML += "<p> <a href=resultados.html?idPelis=" + id + ">" + titulo + "</a></p>"
-//          document.querySelector(".peliculas").innerHTML += "<img src=" + url + " >"
-//        }
-//      })
-//      .catch(function(error) {
-//        console.log("Error: " + error);
-//      })
-//      // boton buscador //
-//
+
  //API peliculas populares//
  fetch("https://api.themoviedb.org/3/movie/popular?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&page=1")
    .then(function (respuesta){
      return respuesta.json()
    })
    .then(function(informacion){
-     console.log(informacion);
+     console.log(informacion.results);
+     var arrayDePelis = informacion.results
      for(i=0; i<12; i++){
        var url=informacion.results[i].poster_path
        console.log(url);
+       var titulo =  arrayDePelis[i].title
+       var id = arrayDePelis[i].id
+       var resumen = arrayDePelis[i].overview
+       var fecha = arrayDePelis[i].release_date
+       var puntos = arrayDePelis[i].vote_average
      if (i == 0) {
-       document.querySelector("#carrousel-populares").innerHTML += '<li><div><img src="https://image.tmdb.org/t/p/original'+ url+'"></div></li>'
+       document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></a></div></li>'
       }else {
-        document.querySelector("#carrousel-populares").innerHTML += '<li><div><img src="https://image.tmdb.org/t/p/original'+url+'"></div></li>'
+        document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"><</div></li>'
       }
      }
+     var posters = document.querySelectorAll(".poster")
+
+     for (var i = 0; i < posters.length; i++) {
+       posters[i].addEventListener("click", function() {
+         id = this.getAttribute("idPelicula")
+         pos = this.getAttribute("posArray")
+
+         pelicula = arrayDePelis[pos]
+         titulo = pelicula.title
+         resumen = pelicula.overview
+
+         document.querySelector(".el-titular").innerHTML = titulo
+         document.querySelector(".el-resumen").innerHTML = resumen
+
    })
+ }
     .catch(function(error){
       console.log("Error" + error)
    })
@@ -119,4 +110,6 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
 
 
 
+}
+})
 }
