@@ -59,6 +59,13 @@ h1.titulos-peliculas{
   left: 37.5%;
 
 }
+
+.display-none{
+  display: none;
+}
+footer{
+  margin-top: 2%;
+}
 /*main section*/
 
 /*****MEDIA QUERIES*****/
