@@ -42,15 +42,38 @@ window.onload = function(){
        posters[i].addEventListener("click", function() {
          id = this.getAttribute("idPelicula")
          pos = this.getAttribute("posArray")
-
          pelicula = arrayDePelis[pos]
          titulo = pelicula.title
          resumen = pelicula.overview
+         fecha = pelicula.release_date
+         genero = pelicula.original_languages
+         video = pelicula.video
+         recomendadas = pelicula.genre_ids
 
          document.querySelector(".el-titular").innerHTML = titulo
          document.querySelector(".el-resumen").innerHTML = resumen
-         })
+         document.querySelector(".laFecha").innerHTML += fecha
+         document.querySelector(".generoDe").innerHTML += genero
+         document.querySelector(".deVideo").innerHTML += video
+         document.querySelector(".laLista").innerHTML += recomendadas
+
+
+        //Boton de ver mas y ver menos
+         document.querySelector("#vamos").onclick = function(e){
+           document.querySelector("#elVerMas").classList.toggle("display-none")
+           console.log(document.querySelector("#vamos").innerText);
+
+        if (document.querySelector("#vamos").innerText == "VER MAS") {
+          document.querySelector("#vamos").innerHTML = 'Ver Menos'
+
+        } else {
+          document.querySelector("#vamos").innerText = 'Ver mas'
+        }
+         }
+       })
      }
+
+
    })
     .catch(function(error){
       console.log("Error" + error)
@@ -88,6 +111,7 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
         pelicula = arrayDePelis[pos]
         titulo = pelicula.title
         resumen = pelicula.overview
+
 
         document.querySelector(".el-titular").innerHTML = titulo
         document.querySelector(".el-resumen").innerHTML = resumen
