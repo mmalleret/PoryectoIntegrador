@@ -13,6 +13,7 @@ fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=11f88aad97603b2da80
       document.querySelector(".listado-generos").innerHTML += '<a class="dropdown-item" href="listado.html?genero='+generos[i].id+'">' + generos[i].name + '</a>'
     }
 
+
 })
 
 .catch(function(error){

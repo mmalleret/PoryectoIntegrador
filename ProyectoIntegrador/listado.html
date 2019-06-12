@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- //<bootstrap css>// -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--//<uikit css>//-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+    <!--//<uikit javascript>//-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
     <!--css-->
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/header.css">
@@ -35,7 +40,15 @@
       <li class="nav-item active">
         <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Géneros
+        </a>
+        <div class="dropdown-menu listado-generos" aria-labelledby="navbarDropdown">
 
+
+        </div>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 form-buscar" action="resultado.html" method="get">
       <i class="fas fa-search"></i>
@@ -48,21 +61,19 @@
 
     <main>
 
-      <div class="genero">
+      <div class="noMeFunciona">
 
       </div>
-
-
-  <!-- This is the modal -->
-  <div id="modal-example" uk-modal>
-      <div class="uk-modal-dialog uk-modal-body">
-          <h2 class="uk-modal-title titulo-pelicula">Headline</h2>
-          <p class="resumen-pelicula">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <!-- This is the modal -->
+      <div id="modal-example" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title el-titular">Headline</h2>
+          <p class="el-resumen">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <p class="uk-text-right">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-        </p>
-      </div>
-  </div>
+          </p>
+        </div>
+
 
     </main>
 
@@ -93,6 +104,8 @@
     </footer>
    <script type="text/javascript" src="js/listado.js">
 
+   </script>
+   <script type="text/javascript" src="js/generos.js">
    </script>
   </body>
 </html>
