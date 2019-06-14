@@ -3,6 +3,10 @@ window.onload = function(){
 
      var genre = queryString.get("genero");
 
+     var namegenre = queryString.get("nombre");
+
+     document.querySelector("main h2").innerHTML += namegenre + ' Movies'
+
 fetch("https://api.themoviedb.org/3/discover/movie?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + genre)
 .then(function(respuesta){
   return respuesta.json()
@@ -41,4 +45,16 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=11f88aad97603b2da806d
 .catch(function(error){
   console.log("Error" + error)
 })
+fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")
+
+.then(function(infoGenero){
+   return infoGenero.json()
+})
+
+
+
+
+
+
+
 }
