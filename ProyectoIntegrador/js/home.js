@@ -1,19 +1,5 @@
 window.onload = function(){
 
-   // boton de busqueda//
-
-   document.querySelector(".form-buscar").onsubmit = function(e) {
-     var buscadorInput = document.querySelector("#buscador")
-     if (buscadorInput.value.length < 3) {
-       e.preventDefault()
-       document.querySelector(".alert").style.display = "block"
-       setTimeout(function() {
-         document.querySelector(".alert").style.display = "none"
-       },3000)
-     }}
-
-
-
  //API peliculas populares//
  fetch("https://api.themoviedb.org/3/movie/popular?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&page=1")
    .then(function (respuesta){
@@ -45,29 +31,11 @@ window.onload = function(){
          pelicula = arrayDePelis[pos]
          titulo = pelicula.title
          resumen = pelicula.overview
-         fecha = pelicula.release_date
-         idioma = pelicula.original_languages
-         video = pelicula.video
-         recomendadas = pelicula.genre_ids
-         //me marca error en puntuacion
-         puntuacion = pelicula.vote_average
-         url = pelicula.poster_path
+
 
          document.querySelector(".el-titular").innerHTML = titulo
          document.querySelector(".el-resumen").innerHTML = resumen
-         document.querySelector(".laFecha").innerHTML = '<p>Fecha de Estreno: '+ fecha + '</p>'
-        // y aca tambien me marca error
-         document.querySelector(".punctuation").innerHTML = '<p>Puntuacion: '+ puntuacion + '</p>'
-         if (idioma=="undefined") {
-           document.querySelector(".generoDe").style.display = "none"
-         }
-         else {
-           document.querySelector(".generoDe").innerHTML = idioma
-         }
-         document.querySelector(".deVideo").innerHTML = '<video src="' + video + '" autoplay poster="posterimage.jpg"></video>'
-
-
-
+         
 
         //Boton de ver mas y ver menos
          document.querySelector("#vamos").onclick = function(e){
