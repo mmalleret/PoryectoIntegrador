@@ -68,8 +68,9 @@ window.addEventListener("load", function(){
       }
       function mostrarInfoLogin(nombreUsuario) {
         var nuevo = document.querySelector ('.nombreDeUsuario')
-        nuevo.innerHTML = "Bienvenido" +  nombreUsuario
+        nuevo.innerHTML = "Bienvenido " +  nombreUsuario
         document.querySelector ("#botonLog").style.display = "none"
+        document.querySelector(".favoritos").style.display = "block"
 
       }
 

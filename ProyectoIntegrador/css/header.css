@@ -2,9 +2,6 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color: black;
-}
 /* header */
 
 header nav{
@@ -12,11 +9,11 @@ header nav{
   font-family: sans-serif;
   height:100px;
 }
-a img.logo{
-  height: 90px;;
+nav img{
+  height: 100px !important;
   position: relative;
-  top:5px;
-  left:-10px;
+  top:-2px;
+  left:-15px;
 }
 header form input{
   margin-left: 10px;
@@ -48,12 +45,29 @@ header div.login button{
   display: none;
   z-index: 10;
 }
-/*alerta*/
-@media only screen and (max-width:420px){
+
+.favoritos {
+  display: none;
 }
 
+/*alerta*/
+@media only screen and (max-width:420px){
+nav img{
+    width: 20%;
+    height: 80% !important;
+  }
+/* .navbar-expand-lg .navbar-nav{
+  width: 70px;
+} */
+.contenedor-nav{
+
+
+}
+li.nav-item.active{
+  position: absolute;
 }
 }
+
 @media only screen and (min-width:421px) and (max-width:800px){
 
 }
