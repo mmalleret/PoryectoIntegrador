@@ -46,16 +46,27 @@ window.onload = function(){
          titulo = pelicula.title
          resumen = pelicula.overview
          fecha = pelicula.release_date
-         genero = pelicula.original_languages
+         idioma = pelicula.original_languages
          video = pelicula.video
          recomendadas = pelicula.genre_ids
+         //me marca error en puntuacion
+         puntuacion = pelicula.vote_average
+         url = pelicula.poster_path
 
          document.querySelector(".el-titular").innerHTML = titulo
          document.querySelector(".el-resumen").innerHTML = resumen
-         document.querySelector(".laFecha").innerHTML += fecha
-         document.querySelector(".generoDe").innerHTML += genero
-         document.querySelector(".deVideo").innerHTML += video
-         document.querySelector(".laLista").innerHTML += recomendadas
+         document.querySelector(".laFecha").innerHTML = '<p>Fecha de Estreno: '+ fecha + '</p>'
+        // y aca tambien me marca error
+         document.querySelector(".punctuation").innerHTML = '<p>Puntuacion: '+ puntuacion + '</p>'
+         if (idioma=="undefined") {
+           document.querySelector(".generoDe").style.display = "none"
+         }
+         else {
+           document.querySelector(".generoDe").innerHTML = idioma
+         }
+         document.querySelector(".deVideo").innerHTML = '<video src="' + video + '" autoplay poster="posterimage.jpg"></video>'
+
+
 
 
         //Boton de ver mas y ver menos
