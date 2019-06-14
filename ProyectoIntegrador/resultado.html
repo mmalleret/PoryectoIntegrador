@@ -25,106 +25,40 @@
     <link rel="stylesheet" href="css/resultados.css">
   </head>
   <body>
-      <div class="alert alert-light" role="alert">
-        Hey! Minimum 3 letters!!!
-      </div>
-
-      <!-- Modal n1 login -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Usuario</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="formulario-login" action="index.html" method="post">
-                  <!--formulario login-->
-                  <div class="form-group">
-                    <label for="inputName">Username</label>
-                    <div></div>
-                    <input type="text" name="inputName" class="form-control-nombre" id="exampleInputName" aria-describedby="emailHelp" placeholder="Escribí tu nombre..." required>
-                  </div>
-                  <div class="form-group">
-                    <label for="email"> E-Mail </label>
-                    <input type="email" name="inputEmail" class="form-control" id="exampleFormEmail" placeholder="Escribí tu mail..." required>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1"> Gender </label>
-                       <select class="form-control" id="exampleFormControlSelect1" name="sexo">
-                          <option value="fem"> Female
-                          </option>
-                          <option value="mal">Male
-                          </option>
-                          <option value="oth">Other
-                          </option>
-                      </select>
-                  </div>
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Accept terms and conditions.</label>
-                  </div>
-                  <br>
-                </form>
-                <!--formulario login-->
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
-              <button id="singIn" type="button" class="btn btn-outline-warning">
-                <a id="botonDeLogin"href="home.html">Login</a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-       <!--nav bar -->
-      <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-         <img src="imagenes/logo.png" alt="" height="100px">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-          </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Genre
-          </a>
-          <div class="dropdown-menu listado-generos" aria-labelledby="navbarDropdown">
-
-
-          </div>
-        </li>
-      </ul>
-      <div class="nombreDeUsuario">
-
-      </div>
-      <form class="form-inline my-2 my-lg-0 form-buscar" action="resultado.html" method="get">
-        <i class="fas fa-search"></i>
-        <input id="buscador"class="form-control mr-sm-2" type="text" name="buscador" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Search</button>
-      </form>
-      <!-- Button trigger modal -->
-      <div class="login">
-        <button id="botonLog" type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">
-        Login
-        </button>
-      </div>
-      </div>
+    <div class="alert alert-light" role="alert">
+      Ey Capo! Minimo 3 caracteres!!!!
     </div>
-  </nav>
-  <!--header-->
-      </header>
+
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+       <img src="imagenes/logo.png" alt="" height="100px">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Géneros
+        </a>
+        <div class="dropdown-menu listado-generos" aria-labelledby="navbarDropdown">
+
+
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 form-buscar" action="resultado.html" method="get">
+      <i class="fas fa-search"></i>
+      <input id="buscaPelis"class="form-control mr-sm-2" type="text" name="buscador" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-dark" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+    </header>
     <main>
 
       <div class="pelis">
@@ -147,29 +81,28 @@
 
     <footer>
     <ul class="footer">
-      <li class="img-footer"><img src="Imagenes/logo.png" alt="Logo the movie db" class="footer-tmdb"></li>
-      <li class="footer">
+      <li class="img-footer"><img src="Imagenes/tmdb.png" alt="Logo the movie db" class="footer-tmdb"></li>
+      <li class="redes">
         <ul class="redes">
-          <h6 class="titulos-redes">Follow us!</h6>
-           <ul class = "iconos-redes">
+          <h6 class="titulos-footer">Seguinos en</h6>
             <i class="fab fa-facebook"></i>
             <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter-square"></i>
-          </ul>
+            <i class="fab fa-twitter"></i>
         </ul>
         <ul class="descargas">
-          <h6 class="titulos-descargas">Download App here!</h6>
-            <ul class = "iconos-descargas">
+          <h6 class="titulos-footer">Descargá la App acá!</h6>
            <i class="fab fa-app-store"></i>
            <i class="fab fa-android"></i>
-         </ul>
+        </ul>
+      </li>
+      <li class="nombres">
+        <ul class="nombres-footer">
+          <li>Belén Flecha</li>
+          <li>Milagros Malleret</li>
+          <li>Martina Vanderusten</li>
         </ul>
       </li>
     </ul>
-      <section class="nombres-footer">
-        <h3 class="nombres-footer">Credits:</h3><h3 class="nombres-footer">Belén Flecha - </h3><h3 class="nombres-footer">Milagros Malleret - </h3><h3 class="nombres-footer">Martina Vanderusten</h3>
-        <img src="Imagenes/powered_by_tmdb.png" class="logo-tmdb">
-      </section>
     </footer>
   <script type="text/javascript" src="js/buscador.js">
 
