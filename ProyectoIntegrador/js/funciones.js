@@ -1,5 +1,53 @@
-window.onload=function(){
-  validando los datos de login//
+window.addEventListener("load", function(){
+
+
+  function populares(){
+  //Boton de ver mas y ver menos
+   document.querySelector("#vamos").onclick = function(e){
+     document.querySelector("#elVerMas").classList.toggle("display-none")
+     console.log(document.querySelector("#vamos").innerText);
+
+  if (document.querySelector("#vamos").innerText == "VER MAS") {
+    document.querySelector("#vamos").innerHTML = 'Ver Menos'
+
+  } else {
+    document.querySelector("#vamos").innerText = 'Ver mas'
+  }
+   }
+    }
+
+   function estrenos(){
+     //Boton de ver mas y ver menos
+      document.querySelector("#vamos").onclick = function(e){
+        document.querySelector("#elVerMas").classList.toggle("display-none")
+        console.log(document.querySelector("#vamos").innerText);
+
+     if (document.querySelector("#vamos").innerText == "VER MAS") {
+       document.querySelector("#vamos").innerHTML = 'Ver Menos'
+
+     } else {
+       document.querySelector("#vamos").innerText = 'Ver mas'
+     }
+      }
+   }
+
+   function rating(){
+     //Boton de ver mas y ver menos
+      document.querySelector("#vamos").onclick = function(e){
+        document.querySelector("#elVerMas").classList.toggle("display-none")
+        console.log(document.querySelector("#vamos").innerText);
+
+     if (document.querySelector("#vamos").innerText == "VER MAS") {
+       document.querySelector("#vamos").innerHTML = 'Ver Menos'
+
+     } else {
+       document.querySelector("#vamos").innerText = 'Ver mas'
+     }
+      }
+   }
+
+
+//validando los datos de login//
       var login = document.querySelector(".formulario-login");
       var nombre = document.querySelector ("input[name="inputName"]");
       var email = document.querySelector("input[name="inpuEmail"]");
@@ -16,7 +64,7 @@ window.onload=function(){
 //mostrar los datos obtenidos//
     var nombre = localStorage.getItem ("Nombre");
     document.getElementById("#exampleInputName").innerHTML = "Bienvenido" + nombre
-
+})
 // //Boton de favoritos
 // var json = localStorage.getItem("favoritos")
 //

@@ -20,7 +20,6 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=11f88aad97603b2da806d
       var puntos = arrayDePelis[i].vote_average
 
       document.querySelector(".noMeFunciona").innerHTML +='<div class="general"><a class="poster" posArray="' + i + '" idPelicula="' + id + '" href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original/'+ url +'" width="300px"></a></div>'
-
     }
     var posters = document.querySelectorAll(".poster")
 

@@ -1,4 +1,4 @@
-window.onload = function(){
+window.addEventListener("load", function(){
 
  //API peliculas populares//
  fetch("https://api.themoviedb.org/3/movie/popular?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&page=1")
@@ -17,9 +17,9 @@ window.onload = function(){
        var fecha = arrayDePelis[i].release_date
        var puntos = arrayDePelis[i].vote_average
        if (i == 0) {
-         document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></a></div></li>'
+         document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a id="detalle" class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></a></div></li>'
         }else {
-          document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></a></div></li>'
+          document.querySelector("#carrousel-populares").innerHTML += '<li><div class="pelis"><a id="detalle" class= "poster" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></a></div></li>'
         }
      }
      var posters = document.querySelectorAll(".poster")
@@ -35,7 +35,7 @@ window.onload = function(){
 
          document.querySelector(".el-titular").innerHTML = titulo
          document.querySelector(".el-resumen").innerHTML = resumen
-         
+
 
         //Boton de ver mas y ver menos
          document.querySelector("#vamos").onclick = function(e){
@@ -75,9 +75,9 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
       var fecha = arrayDePelis[i].release_date
       var puntos = arrayDePelis[i].vote_average
     if (i == 0) {
-      document.querySelector("#carrousel-puntuadas").innerHTML += '<li><div class="lasPelis"><a class= "posterA" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></div></li>'
+      document.querySelector("#carrousel-puntuadas").innerHTML += '<li><div class="lasPelis"><a id="detalle" class= "posterA" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></div></li>'
      }else {
-       document.querySelector("#carrousel-puntuadas").innerHTML += '<li><div class="lasPelis"><a class= "posterA" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></div></li>'
+       document.querySelector("#carrousel-puntuadas").innerHTML += '<li><div class="lasPelis"><a id="detalle" class= "posterA" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></div></li>'
      }
     }
     var posters = document.querySelectorAll(".posterA")
@@ -119,9 +119,9 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
        var puntos = arrayDePelis[i].vote_average
 
      if (i == 0) {
-       document.querySelector("#carrousel-estrenos").innerHTML += '<li><div class="laEstrella"><a class="posterB" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></div></li>'
+       document.querySelector("#carrousel-estrenos").innerHTML += '<li><div class="laEstrella"><a id="detalle" class="posterB" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></div></li>'
       }else {
-        document.querySelector("#carrousel-estrenos").innerHTML += '<li><div class="laEstrella"><a class="posterB" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></div></li>'
+        document.querySelector("#carrousel-estrenos").innerHTML += '<li><div class="laEstrella"><a id="detalle" class="posterB" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></div></li>'
       }
      }
      var posters = document.querySelectorAll(".posterB")
@@ -146,4 +146,4 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
 
 
 
-}
+})
