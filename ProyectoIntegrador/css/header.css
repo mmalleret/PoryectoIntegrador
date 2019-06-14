@@ -25,6 +25,16 @@ header div.login button{
   margin-left: 5px;
   margin-right: 5px;
 }
+.form-control-nombre{
+  border-radius: 5px;
+  font-family: sans-serif;
+  height: 40px;
+  width: 100%;
+
+}
+.display-none{
+  display:none;
+}
 /*header*/
 /*alerta*/
 
@@ -39,3 +49,11 @@ header div.login button{
   z-index: 10;
 }
 /*alerta*/
+@media only screen and (max-width:420px){
+}
+
+}
+}
+@media only screen and (min-width:421px) and (max-width:800px){
+
+}

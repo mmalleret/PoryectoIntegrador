@@ -40,24 +40,29 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="" action="index.html" method="post">
+            <form class="formulario-login" action="index.html" method="post">
                 <!--formulario login-->
                 <div class="form-group">
                   <label for="inputName">Nombre de usuario</label>
-                  <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter User name" required>
+                  <div></div>
+                  <input type="text" name="inputName" class="form-control-nombre" id="exampleInputName" aria-describedby="emailHelp" placeholder="Escribí tu nombre..." required>
+                </div>
+                <div class="form-group">
+                  <label for="email"> Mail </label>
+                  <input type="email" name="inputEmail" class="form-control" id="exampleFormEmail" placeholder="Escribí tu mail..." required>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Contraseña</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" required>
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1"> Gender </label>
+                  <label for="exampleFormControlSelect1"> Genero </label>
                      <select class="form-control" id="exampleFormControlSelect1" name="sexo">
-                        <option value="fem"> Female
+                        <option value="fem"> Femenino
                         </option>
-                        <option value="mal">Male
+                        <option value="mal">Masculino
                         </option>
-                        <option value="oth">Other
+                        <option value="oth">Otro
                         </option>
                     </select>
                 </div>
@@ -72,74 +77,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cerrar</button>
             <button id="singIn" type="button" class="btn btn-outline-warning">
-              <a id="botonDeLogin"href="home.html">Sign in</a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--modal n2, registrarse-->
-    <div class="modal fade" id="ejemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="ejemploLabel">Registrarse</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form class="" action="index.html" method="post">
-                <!--formulario login-->
-
-                <div class="form-group">
-                  <label for="inputName">Nombre de usuario</label>
-                  <input type="text" class="form-control" id="ejemploinputName" aria-describedby="emailHelp" placeholder="Enter User name" required>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Contraseña</label>
-                  <input type="password" class="form-control" id="ejemploInputPassword1" placeholder="Password" required>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Confirme su Contraseña</label>
-                  <input type="password" class="form-control" id="ejemploInputPassword1" placeholder="Password" required>
-                </div>
-                <div class="form-group">
-                  <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="form-row">
-                <div class="form-group col-md-6">
-                   <label for="inputCity">City</label>
-                   <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-                </div>
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1"> Gender </label>
-                     <select class="form-control" id="exampleFormControlSelect1" name="sexo">
-                        <option value="fem"> Female
-                        </option>
-                        <option value="mal">Male
-                        </option>
-                        <option value="oth">Other
-                        </option>
-                    </select>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="ejemploCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Aceptar términos y condiciones.</label>
-                </div>
-                <br>
-              </form>
-              <!--formulario login-->
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cerrar</button>
-            <button id="segundoSign"type="submit" class="btn btn-outline-warning">
-              <a id="botonDeLogin" href="home.html">Sign in</a></button>
+              <a id="botonDeLogin"href="home.html">Ingresar</a></button>
           </div>
         </div>
       </div>
@@ -182,10 +120,6 @@
       Login
       </button>
     </div>
-    <div class="Registrarse">
-      <button id="botonRegist" type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#ejemplo">
-        Registrarse
-      </button>
     </div>
   </div>
 </nav>
@@ -257,33 +191,35 @@
 
     <footer>
     <ul class="footer">
-      <li class="img-footer"><img src="Imagenes/tmdb.png" alt="Logo the movie db" class="footer-tmdb"></li>
-      <li class="redes">
+      <li class="img-footer"><img src="Imagenes/logo.png" alt="Logo the movie db" class="footer-tmdb"></li>
+      <li class="footer">
         <ul class="redes">
-          <h6 class="titulos-footer">Seguinos en</h6>
+          <h6 class="titulos-redes">Seguinos en</h6>
+           <ul class = "iconos-redes">
             <i class="fab fa-facebook"></i>
             <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
+            <i class="fab fa-twitter-square"></i>
+          </ul>
         </ul>
         <ul class="descargas">
-          <h6 class="titulos-footer">Descargá la App acá!</h6>
+          <h6 class="titulos-descargas">Descargá la App acá!</h6>
+            <ul class = "iconos-descargas">
            <i class="fab fa-app-store"></i>
            <i class="fab fa-android"></i>
-        </ul>
-      </li>
-      <li class="nombres">
-        <ul class="nombres-footer">
-          <li>Belén Flecha</li>
-          <li>Milagros Malleret</li>
-          <li>Martina Vanderusten</li>
+         </ul>
         </ul>
       </li>
     </ul>
+      <section class="nombres-footer">
+        <h3 class="nombres-footer">Belén Flecha - </h3><h3 class="nombres-footer">Milagros Malleret - </h3><h3 class="nombres-footer">Martina Vanderusten</h3>
+        <img src="Imagenes/powered_by_tmdb.png" class="logo-tmdb">
+      </section>
     </footer>
   </body>
 </html>
-<script type="text/javascript" src="js/home.js">
-
+  <script type="text/javascript" src="js/home.js">
   </script>
   <script type="text/javascript" src="js/generos.js">
+  </script>
+  <script type="text/javascript" src="js/funcioines.js">
   </script>
