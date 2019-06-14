@@ -1,5 +1,31 @@
+
+
+
 window.addEventListener("load", function(){
 
+  function favoritos(id){
+    console.log(id);
+
+    //chequear que la sesion exista
+    var usuarioEnSesion = window.sessionStorage.getItem("usuario")
+    if (usuarioEnSesion === null ) {
+      console.log("no hay sesion activa");
+      document.querySelector("#favoritos").style.display = "none"
+      //Alerta
+    } else {
+      //chequeo si la pelicula esta, si no esta la agrego y si esta la saco
+
+    if (favoritos!=null) {
+      favoritos.push()
+    }
+      var arrayFavoritos =[]
+      console.log(usuarioEnSesion);
+      //si no esta el boton se queda en agregar a favoritos sino cambia a quitar de favoritos
+    }
+
+
+  }
+favoritos()
 
   if (document.querySelector("#vamos") != null) {
      document.querySelector("#vamos").onclick = function() {
@@ -29,11 +55,14 @@ window.addEventListener("load", function(){
 
          document.querySelector("#elVerMas").style.display = "block";
          document.querySelector("#vamos").style.display = "none";
+
+       })
+       .catch(function(error){
+         console.log("Error" + error)
        })
 
      }
    }
-
 
 //validando los datos de login//
   var login = document.querySelector("#singIn");
@@ -57,7 +86,8 @@ window.addEventListener("load", function(){
 //si los datos son correctos, guardarlos//
       if (nombre.value != "") {
           document.querySelector("#botonLog").click()
-          localStorage.setItem("usuario", nombre.value)
+          window.localStorage.setItem("usuario", nombre.value)
+          window.sessionStorage.setItem("usuario", nombre.value)
           mostrarInfoLogin(nombre.value)
         }
       }
@@ -73,6 +103,7 @@ window.addEventListener("load", function(){
         document.querySelector(".favoritos").style.display = "block"
 
       }
+
 
 
 
@@ -105,13 +136,17 @@ window.addEventListener("load", function(){
             // Pregunto si el gif ya era favorito
           if (favoritos.indexOf(id) == -1) {
             // Si no era favorito digo "Queres agregarlo?"
+
             // OJO QUE COMO HAY MUCHOS BOTONES EL BOTON TIENE UNA REFERENCIA DEL idGif
           document.querySelector("elBotonFavs").innerHTML += "<button idPeli=" + id + " class='favorito'>Agregar a Favoritos</button><br>"
           } else {
             // Si ya era, digo "Queres quitarlo?"
           document.querySelector("elBotonFavs").innerHTML += "<button idPeli=" + id + " class='favorito'>Quitar de Favoritos</button><br>"
           }
-          document.querySelector("elBotonFavs").innerHTML += "<img src=" + url + " >"
+
+          })
+          .catch(function(error){
+            console.log("Error" + error)
           })
           }
 
@@ -119,4 +154,43 @@ window.addEventListener("load", function(){
 
 
 
+
+
 })
+function favoritos(id){
+  console.log(id);
+  // window.sessionStorage.removeItem("favoritos")
+  var arrayFavoritosEnSesion = JSON.parse(window.sessionStorage.getItem("favoritos"))
+  console.log(arrayFavoritosEnSesion);
+  //chequear que la sesion exista
+  var usuarioEnSesion = window.sessionStorage.getItem("usuario")
+  if (usuarioEnSesion === null ) {
+    console.log("no hay sesion activa");
+    document.querySelector("#favoritos").style.display = "none"
+    //Alerta
+  } else {
+    //chequeo si la pelicula esta, si no esta la agrego y si esta la saco
+    if (arrayFavoritosEnSesion === undefined || arrayFavoritosEnSesion === null) {
+      var arrayFavoritos =[]
+      arrayFavoritos.push(id)
+      window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritos))
+      console.log(arrayFavoritos);
+      //si no esta el boton se queda en agregar a favoritos sino cambia a quitar de favoritos
+    } else{
+      arrayFavoritosEnSesion.push(id)
+      console.log(arrayFavoritosEnSesion);
+      console.log(JSON.parse(window.sessionStorage.setItem("favoritos",arrayFavoritosEnSesion)))
+      // arrayFavoritosEnSesion corregir esto, aqui debe ser un array
+      if (arrayFavoritosEnSesion.indexOf[id] ==-1 ){
+        arrayFavoritosEnSesion.push(id)
+        window.sessionStorage.setItem("favoritos",arrayFavoritosEnSesion)
+      } else {
+        arrayFavoritosEnSesion.remove(id)
+      }
+      // indexof para checkear que no este en el array
+
+    }
+  }
+
+
+}
