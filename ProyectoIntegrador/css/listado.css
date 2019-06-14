@@ -6,6 +6,11 @@ div .generos {
   margin:2%;
 
 }
+
+div.general{
+  float: left;
+}
+
 #modal-example {
   font-family: sans-serif;
 
