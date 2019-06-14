@@ -48,22 +48,46 @@ window.addEventListener("load", function(){
 
 
 //validando los datos de login//
-      var login = document.querySelector(".formulario-login");
-      var nombre = document.querySelector ("input[name="inputName"]");
-      var email = document.querySelector("input[name="inpuEmail"]");
-      login.onsubmit = function (event){
-        if (nombre.value ==""){
-          event.preventDefault();
+  var login = document.querySelector("#singIn");
+    login.onclick = function (event){
+      event.preventDefault()
+      var email = document.querySelector('input[name="inputEmail"]');
+      var nombre = document.querySelector('input[name="inputName"]');
+        if (email.value==""){
+          UIkit.notification({message: 'Dejaste el email vacio', status: 'danger'})
+        }
+        else if (nombre.value=="") {
+         UIkit.notification({message: 'No completaste tu nombre', status: 'danger'})
+        }
+        else if (nombre.value == "" && email.value==""){
+        UIkit.notification({message: 'Dejaste el email vacio', status: 'danger'})
+        UIkit.notification({message: 'No completaste tu nombre', status: 'danger'})
+        }
+        else {
+          false
+        }
+//si los datos son correctos, guardarlos//
+      if (nombre.value != "") {
+          document.querySelector("#botonLog").click()
+          localStorage.setItem("usuario", nombre.value)
+          mostrarInfoLogin(nombre.value)
         }
       }
+//si el campo de login ya esta completo saludar al usuario//
+      if (localStorage.getItem("usuario") != null) {
+      mostrarInfoLogin(localStorage.getItem("usuario"))
+      var usuario = "usuario"
+      }
+      function mostrarInfoLogin(nombreUsuario) {
+        var nuevo = document.querySelector ('.nombreDeUsuario')
+        nuevo.innerHTML = "Bienvenido" +  usuario
+        document.querySelector ("#botonLog").style.display = none
 
-//guardar los datos en el local storage//
-    var usuario = document.getElementById("#exampleInputName").value;
-    var datos = localStorage.getItem("nombre", usuario);
+      }
 
-//mostrar los datos obtenidos//
-    var nombre = localStorage.getItem ("Nombre");
-    document.getElementById("#exampleInputName").innerHTML = "Bienvenido" + nombre
+
+
+
 })
 // //Boton de favoritos
 // var json = localStorage.getItem("favoritos")
