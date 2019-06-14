@@ -37,8 +37,11 @@ window.onload = function(){
              titulo = pelicula.title
              resumen = pelicula.overview
 
-             document.querySelector(".titulo-pelicula").innerHTML = titulo
-             document.querySelector(".resumen-pelicula").innerHTML = resumen
+             document.querySelector(".el-titular").innerHTML = titulo
+             document.querySelector(".el-resumen").innerHTML = resumen
+             document.querySelector("#elVerMas").style.display = "none"
+             document.querySelector("#vamos").style.display = "block"
+             document.querySelector("#vamos").setAttribute("idPelicula", id) 
            })
          }
        })

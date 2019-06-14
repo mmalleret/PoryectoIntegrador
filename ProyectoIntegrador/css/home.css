@@ -40,7 +40,10 @@ header div.login button{
   z-index: 10;
 }
 /*alerta*/
-
+#vamos{
+  float:left;
+  margin-right: 5%;
+}
 /*main section*/
 h1.titulos-peliculas{
   font-family: sans-serif;

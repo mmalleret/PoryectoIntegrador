@@ -35,20 +35,10 @@ window.addEventListener("load", function(){
 
          document.querySelector(".el-titular").innerHTML = titulo
          document.querySelector(".el-resumen").innerHTML = resumen
+         document.querySelector("#elVerMas").style.display = "none"
+         document.querySelector("#vamos").style.display = "block"
+         document.querySelector("#vamos").setAttribute("idPelicula", id)
 
-
-        //Boton de ver mas y ver menos
-         document.querySelector("#vamos").onclick = function(e){
-           document.querySelector("#elVerMas").classList.toggle("display-none")
-           console.log(document.querySelector("#vamos").innerText);
-
-        if (document.querySelector("#vamos").innerText == "VER MAS") {
-          document.querySelector("#vamos").innerHTML = 'Ver Menos'
-
-        } else {
-          document.querySelector("#vamos").innerText = 'Ver mas'
-        }
-         }
        })
      }
 
@@ -94,6 +84,9 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
 
         document.querySelector(".el-titular").innerHTML = titulo
         document.querySelector(".el-resumen").innerHTML = resumen
+        document.querySelector("#elVerMas").style.display = "none"
+        document.querySelector("#vamos").style.display = "block"
+        document.querySelector("#vamos").setAttribute("idPelicula", id)
       })
    }
    })
@@ -137,6 +130,9 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
 
          document.querySelector(".el-titular").innerHTML = titulo
          document.querySelector(".el-resumen").innerHTML = resumen
+         document.querySelector("#elVerMas").style.display = "none"
+         document.querySelector("#vamos").style.display = "block"
+         document.querySelector("#vamos").setAttribute("idPelicula", id)
        })
        }
      })

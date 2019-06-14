@@ -1,49 +1,37 @@
 window.addEventListener("load", function(){
 
 
-  function populares(){
-  //Boton de ver mas y ver menos
-   document.querySelector("#vamos").onclick = function(e){
-     document.querySelector("#elVerMas").classList.toggle("display-none")
-     console.log(document.querySelector("#vamos").innerText);
+  if (document.querySelector("#vamos") != null) {
+     document.querySelector("#vamos").onclick = function() {
+       var idPelicula = this.getAttribute("idpelicula")
 
-  if (document.querySelector("#vamos").innerText == "VER MAS") {
-    document.querySelector("#vamos").innerHTML = 'Ver Menos'
+       fetch("https://api.themoviedb.org/3/movie/" + idPelicula + "?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")
+       .then(function(respuesta){
+         return respuesta.json()
+       })
+       .then(function(pelicula){
+         id = pelicula.id
+         fecha = pelicula.release_date
+         idioma = pelicula.original_language
+         recomendadas = pelicula.genre_ids
+         puntos = pelicula.vote_average
+         url = pelicula.poster_path
 
-  } else {
-    document.querySelector("#vamos").innerText = 'Ver mas'
-  }
-   }
-    }
+         document.querySelector(".laFecha").innerHTML = '<p>Fecha de Estreno: '+ fecha + '</p>'
+         document.querySelector(".puntosPeli").innerHTML = '<p>Puntuación: '+ puntos + '</p>'
 
-   function estrenos(){
-     //Boton de ver mas y ver menos
-      document.querySelector("#vamos").onclick = function(e){
-        document.querySelector("#elVerMas").classList.toggle("display-none")
-        console.log(document.querySelector("#vamos").innerText);
+         if (idioma == undefined) {
+           document.querySelector(".generoDe").style.display = "none"
+         }
+         else {
+           document.querySelector(".generoDe").innerHTML = '<p class=idioma>'+idioma+'</p>'
+         }
 
-     if (document.querySelector("#vamos").innerText == "VER MAS") {
-       document.querySelector("#vamos").innerHTML = 'Ver Menos'
+         document.querySelector("#elVerMas").style.display = "block";
+         document.querySelector("#vamos").style.display = "none";
+       })
 
-     } else {
-       document.querySelector("#vamos").innerText = 'Ver mas'
      }
-      }
-   }
-
-   function rating(){
-     //Boton de ver mas y ver menos
-      document.querySelector("#vamos").onclick = function(e){
-        document.querySelector("#elVerMas").classList.toggle("display-none")
-        console.log(document.querySelector("#vamos").innerText);
-
-     if (document.querySelector("#vamos").innerText == "VER MAS") {
-       document.querySelector("#vamos").innerHTML = 'Ver Menos'
-
-     } else {
-       document.querySelector("#vamos").innerText = 'Ver mas'
-     }
-      }
    }
 
 

@@ -38,6 +38,9 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=11f88aad97603b2da806d
 
         document.querySelector(".el-titular").innerHTML = titulo
         document.querySelector(".el-resumen").innerHTML = resumen
+        document.querySelector("#elVerMas").style.display = "none"
+        document.querySelector("#vamos").style.display = "block"
+        document.querySelector("#vamos").setAttribute("idPelicula", id) 
         })
     }
     })
