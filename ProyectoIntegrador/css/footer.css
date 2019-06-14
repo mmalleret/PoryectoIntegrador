@@ -3,13 +3,14 @@ footer {
   background-color:#F9C719;
 }
 ul.footer{
-  height: 80px;
+  height: 8%;
   list-style-type: none;
+  overflow: hidden;
 }
-img.footer-tmdb{
+img.logo-footer{
   float: left;
-  width: 80px;
-  height: 80px;
+  width: 6%;
+  height: 6%;
   position: relative;
   left: -14px;
   top: 9px;
@@ -23,12 +24,12 @@ li.footer{
 }
 ul.redes{
   float: left;
-  font-size: 17px;
+  font-size: 5%;
 }
 
  ul.descargas{
    float: left;
-   font-size: 17px;
+   font-size: 5%;
 }
 ul.iconos-redes{
   font-size: 24px;
@@ -51,16 +52,16 @@ ul.iconos-descargas{
 }
 h6.titulos-redes{
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: .875rem;
 
 }
 h6.titulos-descargas{
   font-family: sans-serif;
-  font-size: 15px;
+  font-size: .875rem;
 }
 
 section.nombres-footer{
-  height: 60px;
+  height:64px;
   border-top: 3px solid rgba(249,249,249,0.5);
   overflow: hidden;
   position: relative;
@@ -72,12 +73,12 @@ h3.nombres-footer{
   margin-left: 5px;
   margin-right: 0;
   margin-top: 5px;
-  margin-bottom: 15px;;
+  margin-bottom: 15px;
 }
 img.logo-tmdb{
   float: left;
-  width: 115px;
-  height: 50px;
+  width: 8%;
+  height: 73%;
   border-radius: 3px;
   border: 3px white;
   margin-top: 5px;
@@ -85,16 +86,15 @@ img.logo-tmdb{
   right:5px;
 }
 /*footer*/
-@media only screen and (max-width:420px){
-/* ul.footer{
-  height: 75px;
-}
 
-img.footer-tmdb{
+/*****MEDIA QUERIES*****/
+@media only screen and (max-width:420px){
+
+img.logo-footer{
   height: 45px;
   width: 45px;
 }
-
+/*
 ul.redes{
   font-size: 15px;
   position: relative;
@@ -132,9 +132,9 @@ li.nombres{
   height: 100%;
   margin: 0;
 } */
-section.nombres-footer{
-  overflow: visible;
-}
+/* section.nombres-footer{
+  overflow: visible; */
+} */
 }
 
 @media only screen and (min-width:421px) and (max-width:800px){

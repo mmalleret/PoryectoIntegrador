@@ -69,7 +69,7 @@ footer{
 /*main section*/
 
 /*****MEDIA QUERIES*****/
-@media only screen and (max-width:420px){  
+@media only screen and (max-width:420px){
 h1.titulos-peliculas{
   font-size: 4vh;
   width: 83%;
