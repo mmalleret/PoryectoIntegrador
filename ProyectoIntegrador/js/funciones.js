@@ -1,31 +1,5 @@
-
-
-
 window.addEventListener("load", function(){
 
-  function favoritos(id){
-    console.log(id);
-
-    //chequear que la sesion exista
-    var usuarioEnSesion = window.sessionStorage.getItem("usuario")
-    if (usuarioEnSesion === null ) {
-      console.log("no hay sesion activa");
-      document.querySelector("#favoritos").style.display = "none"
-      //Alerta
-    } else {
-      //chequeo si la pelicula esta, si no esta la agrego y si esta la saco
-
-    if (favoritos!=null) {
-      favoritos.push()
-    }
-      var arrayFavoritos =[]
-      console.log(usuarioEnSesion);
-      //si no esta el boton se queda en agregar a favoritos sino cambia a quitar de favoritos
-    }
-
-
-  }
-favoritos()
 
   if (document.querySelector("#vamos") != null) {
      document.querySelector("#vamos").onclick = function() {
@@ -76,9 +50,9 @@ favoritos()
         else if (nombre.value=="") {
          UIkit.notification({message: 'No completaste tu nombre', status: 'danger'})
         }
-        else if (nombre.value == "" && email.value==""){
-        UIkit.notification({message: 'Dejaste el email vacio', status: 'danger'})
+        else if (nombre.value== "" && email.value==""){
         UIkit.notification({message: 'No completaste tu nombre', status: 'danger'})
+        UIkit.notification({message: 'Dejaste el email vacio', status: 'danger'})
         }
         else {
           false
@@ -92,13 +66,14 @@ favoritos()
         }
       }
 //si el campo de login ya esta completo saludar al usuario//
-      if (localStorage.getItem("usuario") != null) {
-      mostrarInfoLogin(localStorage.getItem("usuario"))
+      if (sessionStorage.getItem("usuario") != null) {
+      mostrarInfoLogin(sessionStorage.getItem("usuario"))
       var usuario = "usuario"
       }
       function mostrarInfoLogin(nombreUsuario) {
         var nuevo = document.querySelector ('.nombreDeUsuario')
-        nuevo.innerHTML = "Bienvenido " +  nombreUsuario
+        nuevo.style.backgroundColor = "black"
+        nuevo.innerHTML = "Bienvenido " +  nombreUsuario +'<i class="fas fa-user"></i>'
         document.querySelector ("#botonLog").style.display = "none"
         document.querySelector(".favoritos").style.display = "block"
 
@@ -107,90 +82,52 @@ favoritos()
 
 
 
-  //boton favoritos
-  var json = localStorage.getItem("favoritos")
-
-  // Si ya habia favoritos..
-  if (json != null) {
-  // Desempaquetar el string JSON
-  var objLit = JSON.parse(json)
-  // De todo el objeto literal me interesa EL ARRAY
-  var favoritos = objLit.carac
-  } else {
-    var favoritos = []
-      // Si no habia creo el listado como VACIO
-    }
-    for (var i = 0; i < favoritos.length; i++) {
-        var idPeli = favoritos[i]
-          fetch('"https://api.themoviedb.org/3/movie/'+ idPeli +'?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US"')
-          .then(function(respuesta) {
-                return respuesta.json()
-              })
-          .then(function(peli) {
-            pelicula = peli.results
-            var titulo =  peli.title
-            var url = peli.poster_path
-            var id = peli.id
-
-          document.querySelector("elBotonFavs").innerHTML += "<p> <a href=detalle.html?idPeli=" + id + ">" + titulo + "</a></p>"
-            // Pregunto si el gif ya era favorito
-          if (favoritos.indexOf(id) == -1) {
-            // Si no era favorito digo "Queres agregarlo?"
-
-            // OJO QUE COMO HAY MUCHOS BOTONES EL BOTON TIENE UNA REFERENCIA DEL idGif
-          document.querySelector("elBotonFavs").innerHTML += "<button idPeli=" + id + " class='favorito'>Agregar a Favoritos</button><br>"
-          } else {
-            // Si ya era, digo "Queres quitarlo?"
-          document.querySelector("elBotonFavs").innerHTML += "<button idPeli=" + id + " class='favorito'>Quitar de Favoritos</button><br>"
-          }
-
-          })
-          .catch(function(error){
-            console.log("Error" + error)
-          })
-          }
-
-
-
-
-
 
 
 })
-function favoritos(id){
-  console.log(id);
-  // window.sessionStorage.removeItem("favoritos")
-  var arrayFavoritosEnSesion = JSON.parse(window.sessionStorage.getItem("favoritos"))
-  console.log(arrayFavoritosEnSesion);
+
+function favoritos(idPelicula){
+  console.log(idPelicula);
+  var idPelicula = this.getAttribute("idpelicula")
   //chequear que la sesion exista
   var usuarioEnSesion = window.sessionStorage.getItem("usuario")
+  //si la session existe voy a bucar a mi session storage mis favoritos
+  // y voy a buscar tener la informacion
+  var json = window.sessionStorage.getItem("favoritos")
+  var arrayFavoritosEnSesion = JSON.parse(json)
+  console.log(arrayFavoritosEnSesion);
+
   if (usuarioEnSesion === null ) {
     console.log("no hay sesion activa");
-    document.querySelector("#favoritos").style.display = "none"
+    document.querySelector("#miPerro").style.display = "none"
+    document.querySelector(".alert-info").style.display = "block"
     //Alerta
   } else {
+    document.querySelector(".alert-info").style.display = "none"
     //chequeo si la pelicula esta, si no esta la agrego y si esta la saco
-    if (arrayFavoritosEnSesion === undefined || arrayFavoritosEnSesion === null) {
-      var arrayFavoritos =[]
+
+  if (arrayFavoritosEnSesion === undefined || arrayFavoritosEnSesion === null) {
+      var arrayFavoritos = []
       arrayFavoritos.push(id)
       window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritos))
       console.log(arrayFavoritos);
       //si no esta el boton se queda en agregar a favoritos sino cambia a quitar de favoritos
-    } else{
-      arrayFavoritosEnSesion.push(id)
+    }else{
+      arrayFavoritosEnSesion.push(idPelicula)
+      window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritosEnSesion))
       console.log(arrayFavoritosEnSesion);
-      console.log(JSON.parse(window.sessionStorage.setItem("favoritos",arrayFavoritosEnSesion)))
+      // console.log(JSON.parse(window.sessionStorage.setItem("favoritos"(arrayFavoritosEnSesion))))
       // arrayFavoritosEnSesion corregir esto, aqui debe ser un array
-      if (arrayFavoritosEnSesion.indexOf[id] ==-1 ){
-        arrayFavoritosEnSesion.push(id)
-        window.sessionStorage.setItem("favoritos",arrayFavoritosEnSesion)
+      if (arrayFavoritosEnSesion.indexOf[idPelicula] == -1 ){
+        // indexof para checkear que no este en el array
+        arrayFavoritosEnSesion.push(idPelicula)
+        window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritosEnSesion))
       } else {
-        arrayFavoritosEnSesion.remove(id)
+        document.querySelector("#miPerro").innerHTML = "Quitar de Favoritos"
+        arrayFavoritosEnSesion.splice(idPelicula)
+        window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritosEnSesion))
       }
-      // indexof para checkear que no este en el array
 
     }
   }
-
-
 }

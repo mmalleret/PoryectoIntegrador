@@ -38,8 +38,8 @@ window.addEventListener("load", function(){
          document.querySelector("#elVerMas").style.display = "none"
          document.querySelector("#vamos").style.display = "block"
          document.querySelector("#vamos").setAttribute("idPelicula", id)
-         document.querySelector("#favoritos").id =id;
-       })
+         document.querySelector("#miPerro").setAttribute("idPelicula", id)
+              })
      }
 
 
