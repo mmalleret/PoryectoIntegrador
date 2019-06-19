@@ -12,8 +12,11 @@ window.addEventListener("load", function(){
     return respuesta.json()
   })
   .then(function(informacion){
+    //guarda en pelicula el objeto literal que recibo como respuesta
   console.log(informacion);
-  var ul = document.querySelector("")
+  //capturo el UL para insertar dentro de el, cada peli como un LI
+  var ul = document.querySelector("pelisFavoritas")
+  // genero el LI
   var li;
   li="<li>"
   li+='<p>'+pelicula.title+'</p>'
@@ -21,6 +24,10 @@ window.addEventListener("load", function(){
   li+='<img src="'+urlImg+pelicula.poster_path+'">'
   li+= "</li>"
   ul.innerHTML += li
+  // modifico el HTML del UL
+  })
+  .catch(function(error) {
+  console.log("error "+ error)
   })
 
 
