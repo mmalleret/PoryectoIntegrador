@@ -1,5 +1,27 @@
 window.addEventListener("load", function(){
 
+  function videoPelicula(){
+    var urlParams = new URLSearchParams(window.location.search);
+    var idPeliculas = urlParams.get("id");
+    var urlTrailer = ""
+    fetch("https://api.themoviedb.org/3/movie/" + idPeliculas + "/videos?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")
+    .then(function(respuesta){
+      return respuesta.json()
+    })
+    .then (function(data){
+      console.log(data);
+      console.log(data.status_code);
+      var trailer = data.results[0].key
+      urlTrailer = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+ trailer +'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'
+    })
+    .catch(function(error){
+      console.log(error);
+      return console.log("Error" + error);
+    })
+    .catch(function(error){
+      console.log("Error" + error)
+    })
+  }
 
   if (document.querySelector("#vamos") != null) {
      document.querySelector("#vamos").onclick = function() {
@@ -17,6 +39,11 @@ window.addEventListener("load", function(){
          puntos = pelicula.vote_average
          url = pelicula.poster_path
 
+        var arrayDeGeneros = pelicula.genres
+        var generos =""
+        for (var i=0; i< arrayDeGeneros.length; i++){
+          generos+= arrayDeGeneros[i].name + " "
+        }
          document.querySelector(".laFecha").innerHTML = '<p>Fecha de Estreno: '+ fecha + '</p>'
          document.querySelector(".puntosPeli").innerHTML = '<p>Puntuación: '+ puntos + '</p>'
 
@@ -26,14 +53,12 @@ window.addEventListener("load", function(){
          else {
            document.querySelector(".generoDe").innerHTML = '<p class=idioma>Lenguaje original: '+idioma+'</p>'
          }
-
+         document.querySelector(".laLista").innerHTML = '<p class=laLista> Genero:<a href="listado.html?genero='+generos[i].id+'&nombre=' + generos[i].name + '">' + generos[i].name + '</a>'
          document.querySelector("#elVerMas").style.display = "block";
          document.querySelector("#vamos").style.display = "none";
+         // document.querySelector("iframe").src += trailer
 
-       })
-       .catch(function(error){
-         console.log("Error" + error)
-       })
+   })
 
      }
    }
@@ -63,6 +88,9 @@ window.addEventListener("load", function(){
           window.localStorage.setItem("usuario", nombre.value)
           window.sessionStorage.setItem("usuario", nombre.value)
           mostrarInfoLogin(nombre.value)
+          //cuando me logueo debo iniciar el array donde voy a guardar las pelis preferidas
+          var arrayDePelisFavoritas = []
+          console.log(arrayDePelisFavoritas);
         }
       }
 //si el campo de login ya esta completo saludar al usuario//
@@ -76,58 +104,30 @@ window.addEventListener("load", function(){
         nuevo.innerHTML = "Bienvenido " +  nombreUsuario +'<i class="fas fa-user"></i>'
         document.querySelector ("#botonLog").style.display = "none"
         document.querySelector(".favoritos").style.display = "block"
-
       }
 
 
+function favoritos(id){
+  console.log(id);
+  alert ("me clickearon")
+  //primero reviso si hay alguna peli favorita en el array
+  if (arrayDePelisFavoritas.indexOf(id)===-1){
+  // en este caso no es favorita
+  // pusheo el id dentro del array
+    arrayDePelisFavoritas.push(id)
+    //guardo en session el array, como es un objeto debo transformarlo a string
+    window.sessionStorage.setItem("favorita",JSON.stringify(arrayDePelisFavoritas))
+  } else{
+    // esta peli ya es favorita, la saco del array
+    arrayDePelisFavoritas.splice(arrayDePelisFavoritas.indexOf(id),1)
+    //reemplazo el array que tenia la peli como favorita, por un array que ya no la tiene
+    window.sessionStorage.setItem("favorita",JSON.stringify(arrayDePelisFavoritas))
+  }
 
+  console.log(id);
+  console.log(JSON.parse(window.sessionStorage.getItem("favorita")))
+  }
 
 
 
 })
-
-function favoritos(idPelicula){
-  console.log(idPelicula);
-  var idPelicula = this.getAttribute("idpelicula")
-  //chequear que la sesion exista
-  var usuarioEnSesion = window.sessionStorage.getItem("usuario")
-  //si la session existe voy a bucar a mi session storage mis favoritos
-  // y voy a buscar tener la informacion
-  var json = window.sessionStorage.getItem("favoritos")
-  var arrayFavoritosEnSesion = JSON.parse(json)
-  console.log(arrayFavoritosEnSesion);
-
-  if (usuarioEnSesion === null ) {
-    console.log("no hay sesion activa");
-    document.querySelector("#miPerro").style.display = "none"
-    document.querySelector(".alert-info").style.display = "block"
-    //Alerta
-  } else {
-    document.querySelector(".alert-info").style.display = "none"
-    //chequeo si la pelicula esta, si no esta la agrego y si esta la saco
-
-  if (arrayFavoritosEnSesion === undefined || arrayFavoritosEnSesion === null) {
-      var arrayFavoritos = []
-      arrayFavoritos.push(id)
-      window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritos))
-      console.log(arrayFavoritos);
-      //si no esta el boton se queda en agregar a favoritos sino cambia a quitar de favoritos
-    }else{
-      arrayFavoritosEnSesion.push(idPelicula)
-      window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritosEnSesion))
-      console.log(arrayFavoritosEnSesion);
-      // console.log(JSON.parse(window.sessionStorage.setItem("favoritos"(arrayFavoritosEnSesion))))
-      // arrayFavoritosEnSesion corregir esto, aqui debe ser un array
-      if (arrayFavoritosEnSesion.indexOf[idPelicula] == -1 ){
-        // indexof para checkear que no este en el array
-        arrayFavoritosEnSesion.push(idPelicula)
-        window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritosEnSesion))
-      } else {
-        document.querySelector("#miPerro").innerHTML = "Quitar de Favoritos"
-        arrayFavoritosEnSesion.splice(idPelicula)
-        window.sessionStorage.setItem("favoritos",JSON.stringify(arrayFavoritosEnSesion))
-      }
-
-    }
-  }
-}

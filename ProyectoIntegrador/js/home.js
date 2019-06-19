@@ -38,7 +38,9 @@ window.addEventListener("load", function(){
          document.querySelector("#elVerMas").style.display = "none"
          document.querySelector("#vamos").style.display = "block"
          document.querySelector("#vamos").setAttribute("idPelicula", id)
-         document.querySelector("#miPerro").setAttribute("idPelicula", id)
+         document.querySelector(".elDivFav").innerHTML ='<button class="miBoton" onclick="favoritos(' + id+ ')"> &#9733; </button>'
+
+
               })
      }
 
@@ -87,6 +89,8 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
         document.querySelector("#elVerMas").style.display = "none"
         document.querySelector("#vamos").style.display = "block"
         document.querySelector("#vamos").setAttribute("idPelicula", id)
+        document.querySelector(".elDivFav").innerHTML ='<button class="miBoton" onclick="favoritos(' + id+ ')"> &#9733; </button>'
+
       })
    }
    })
@@ -133,6 +137,8 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
          document.querySelector("#elVerMas").style.display = "none"
          document.querySelector("#vamos").style.display = "block"
          document.querySelector("#vamos").setAttribute("idPelicula", id)
+         document.querySelector(".elDivFav").innerHTML ='<button class="miBoton" onclick="favoritos(' + id+ ')"> &#9733; </button>'
+
        })
        }
      })

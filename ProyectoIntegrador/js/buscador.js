@@ -1,4 +1,4 @@
-window.onload = function(){
+window.addEventListener("load", function(){
 // boton de busqueda//
 
 document.querySelector(".form-buscar").onsubmit = function(e) {
@@ -10,4 +10,4 @@ document.querySelector(".form-buscar").onsubmit = function(e) {
       document.querySelector(".alert-light").style.display = "none"
     },3000)
   }}
-}
+})
