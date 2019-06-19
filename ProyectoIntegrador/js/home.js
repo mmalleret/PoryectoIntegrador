@@ -38,8 +38,30 @@ window.addEventListener("load", function(){
          document.querySelector("#elVerMas").style.display = "none"
          document.querySelector("#vamos").style.display = "block"
          document.querySelector("#vamos").setAttribute("idPelicula", id)
-         document.querySelector(".elDivFav").innerHTML ='<button class="miBoton" onclick="favoritos(' + id + ')"> &#9733; </button>'
+         document.querySelector("#elDivFav").innerHTML ='<button class="miBoton" id="botonFavoritos" name="' + id+ '"> &#9733; </button>'
+         var boton = document.querySelector('#botonFavoritos')
+         boton.addEventListener("click", function(){
+           var id = boton.name
+           alert ("me clickearon")
+           var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
+           console.log(arrayDePelisFavoritas);
+           //primero reviso si hay alguna peli favorita en el array
+           if (arrayDePelisFavoritas.indexOf(id)===-1){
+           // en este caso no es favorita
+           // pusheo el id dentro del array
+             arrayDePelisFavoritas.push(id)
+             //guardo en session el array, como es un objeto debo transformarlo a string
+             window.sessionStorage.setItem("arrayDePelisFavoritas",JSON.stringify(arrayDePelisFavoritas))
+           } else{
+             // esta peli ya es favorita, la saco del array
+             arrayDePelisFavoritas.splice(arrayDePelisFavoritas.indexOf(id),1)
+             //reemplazo el array que tenia la peli como favorita, por un array que ya no la tiene
+             window.sessionStorage.setItem("arrayDePelisFavoritas",JSON.stringify(arrayDePelisFavoritas))
+           }
 
+           console.log(id);
+           console.log(JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas")))
+         })
 
               })
      }
@@ -89,10 +111,34 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
         document.querySelector("#elVerMas").style.display = "none"
         document.querySelector("#vamos").style.display = "block"
         document.querySelector("#vamos").setAttribute("idPelicula", id)
-        document.querySelector(".elDivFav").innerHTML ='<button class="miBoton" onclick="favoritos(' + id+ ')"> &#9733; </button>'
+        document.querySelector("#elDivFav").innerHTML ='<button class="miBoton" id="botonFavoritos" name="' + id+ '"> &#9733; </button>'
+        var boton = document.querySelector('#botonFavoritos')
+        boton.addEventListener("click", function(){
+          var id = boton.name
+          alert ("me clickearon")
+          var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
+          console.log(arrayDePelisFavoritas);
+          //primero reviso si hay alguna peli favorita en el array
+          if (arrayDePelisFavoritas.indexOf(id)===-1){
+          // en este caso no es favorita
+          // pusheo el id dentro del array
+            arrayDePelisFavoritas.push(id)
+            //guardo en session el array, como es un objeto debo transformarlo a string
+            window.sessionStorage.setItem("arrayDePelisFavoritas",JSON.stringify(arrayDePelisFavoritas))
+          } else{
+            // esta peli ya es favorita, la saco del array
+            arrayDePelisFavoritas.splice(arrayDePelisFavoritas.indexOf(id),1)
+            //reemplazo el array que tenia la peli como favorita, por un array que ya no la tiene
+            window.sessionStorage.setItem("arrayDePelisFavoritas",JSON.stringify(arrayDePelisFavoritas))
+          }
+
+          console.log(id);
+          console.log(JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas")))
+        })
+
 
       })
-   }
+    }
    })
    .catch(function(error){
      console.log("Error" + error)
@@ -137,8 +183,30 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
          document.querySelector("#elVerMas").style.display = "none"
          document.querySelector("#vamos").style.display = "block"
          document.querySelector("#vamos").setAttribute("idPelicula", id)
-         document.querySelector(".elDivFav").innerHTML ='<button class="miBoton" onclick="favoritos(' + id+ ')"> &#9733; </button>'
+         document.querySelector("#elDivFav").innerHTML ='<button class="miBoton" id="botonFavoritos" name="' + id+ '"> &#9733; </button>'
+         var boton = document.querySelector('#botonFavoritos')
+         boton.addEventListener("click", function(){
+           var id = boton.name
+           alert ("me clickearon")
+           var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
+           console.log(arrayDePelisFavoritas);
+           //primero reviso si hay alguna peli favorita en el array
+           if (arrayDePelisFavoritas.indexOf(id)===-1){
+           // en este caso no es favorita
+           // pusheo el id dentro del array
+             arrayDePelisFavoritas.push(id)
+             //guardo en session el array, como es un objeto debo transformarlo a string
+             window.sessionStorage.setItem("arrayDePelisFavoritas",JSON.stringify(arrayDePelisFavoritas))
+           } else{
+             // esta peli ya es favorita, la saco del array
+             arrayDePelisFavoritas.splice(arrayDePelisFavoritas.indexOf(id),1)
+             //reemplazo el array que tenia la peli como favorita, por un array que ya no la tiene
+             window.sessionStorage.setItem("arrayDePelisFavoritas",JSON.stringify(arrayDePelisFavoritas))
+           }
 
+           console.log(id);
+           console.log(JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas")))
+         })
        })
        }
      })

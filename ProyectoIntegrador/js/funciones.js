@@ -1,68 +1,93 @@
 window.addEventListener("load", function(){
-
-  function videoPelicula(){
+// trailer pelicula
     var urlParams = new URLSearchParams(window.location.search);
     var idPeliculas = urlParams.get("id");
     var urlTrailer = ""
-    fetch("https://api.themoviedb.org/3/movie/" + idPeliculas + "/videos?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")
-    .then(function(respuesta){
-      return respuesta.json()
-    })
-    .then (function(data){
-      console.log(data);
-      console.log(data.status_code);
-      var trailer = data.results[0].key
-      urlTrailer = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+ trailer +'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'
-    })
-    .catch(function(error){
-      console.log(error);
-      return console.log("Error" + error);
-    })
-    .catch(function(error){
-      console.log("Error" + error)
-    })
-  }
+
+
+
 
   if (document.querySelector("#vamos") != null) {
      document.querySelector("#vamos").onclick = function() {
        var idPelicula = this.getAttribute("idpelicula")
 
-       fetch("https://api.themoviedb.org/3/movie/" + idPelicula + "?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")
+       fetch("https://api.themoviedb.org/3/movie/" + idPelicula + "/videos?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")
        .then(function(respuesta){
          return respuesta.json()
        })
-       .then(function(pelicula){
-         id = pelicula.id
-         fecha = pelicula.release_date
-         idioma = pelicula.original_language
-         recomendadas = pelicula.genre_ids
-         puntos = pelicula.vote_average
-         url = pelicula.poster_path
+       .then (function(data){
+         console.log(data);
+         console.log(data.status_code);
+         var trailer = data.results[0].key
+         urlTrailer = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+ trailer +'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>'
 
-        var arrayDeGeneros = pelicula.genres
-        var generos =""
-        for (var i=0; i< arrayDeGeneros.length; i++){
-          generos+= arrayDeGeneros[i].name + " "
-        }
-         document.querySelector(".laFecha").innerHTML = '<p>Fecha de Estreno: '+ fecha + '</p>'
-         document.querySelector(".puntosPeli").innerHTML = '<p>Puntuación: '+ puntos + '</p>'
+         fetch("https://api.themoviedb.org/3/movie/" + idPelicula + "?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")
+           .then(function(respuesta){
+             return respuesta.json()
+           })
+           .then(function(pelicula){
+             id = pelicula.id
+             fecha = pelicula.release_date
+             idioma = pelicula.original_language
+             recomendadas = pelicula.genre_ids
+             puntos = pelicula.vote_average
+             url = pelicula.poster_path
 
-         if (idioma == undefined) {
-           document.querySelector(".generoDe").style.display = "none"
-         }
-         else {
-           document.querySelector(".generoDe").innerHTML = '<p class=idioma>Lenguaje original: '+idioma+'</p>'
-         }
-         document.querySelector(".laLista").innerHTML = '<p class=laLista> Genero:<a href="listado.html?genero='+generos[i].id+'&nombre=' + generos[i].name + '">' + generos[i].name + '</a>'
-         document.querySelector("#elVerMas").style.display = "block";
-         document.querySelector("#vamos").style.display = "none";
-         // document.querySelector("iframe").src += trailer
+            var arrayDeGeneros = pelicula.genres
+            var generos =""
+            // for (var i=0; i< arrayDeGeneros.length; i++){
+            //   generos+= arrayDeGeneros[i].name + " "
+            // }
+             document.querySelector(".laFecha").innerHTML = '<p>Fecha de Estreno: '+ fecha + '</p>'
+             document.querySelector(".puntosPeli").innerHTML = '<p>Puntuación: '+ puntos + '</p>'
+             document.querySelector(".iframe").innerHTML ='<div class="iframe">'+ urlTrailer + '</div>'
 
-   })
+             if (idioma == undefined) {
+               document.querySelector(".generoDe").style.display = "none"
+             }
+             else {
+               document.querySelector(".generoDe").innerHTML = '<p class=idioma>Lenguaje original: '+idioma+'</p>'
+             }
+             var laLista = '<p class=laLista> Generos:</p><ul>'
+             for (var i=0; i< arrayDeGeneros.length; i++){
+                laLista += '<li><a href="listado.html?genero='+arrayDeGeneros[i].id+'&nombre=' + arrayDeGeneros[i].name + '">' + arrayDeGeneros[i].name + '</a></li>'
+             }
 
-     }
-   }
+             laLista += '</ul>'
 
+             document.querySelector(".laLista").innerHTML = laLista
+             document.querySelector("#elVerMas").style.display = "block";
+             document.querySelector("#vamos").style.display = "none";
+
+         // fetch("https://api.themoviedb.org/3/movie/"+id+"/recommendations?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US&page=1")
+         // .then(function(respuesta){
+         //   return respuesta.json()
+         // })
+         // .then(function(){
+         //
+         // })
+         // .catch(function(error){
+         //   console.log(error);
+         //   return console.log("Error" + error);
+         // })
+     })
+
+
+         .catch(function(error){
+           console.log(error);
+           return console.log("Error" + error);
+         })
+
+
+       })
+       .catch(function(error){
+         console.log(error);
+         return console.log("Error" + error);
+       })
+
+
+
+}}
 //validando los datos de login//
   var login = document.querySelector("#singIn");
     login.onclick = function (event){
@@ -72,16 +97,14 @@ window.addEventListener("load", function(){
         if (email.value==""){
           UIkit.notification({message: 'Dejaste el email vacio', status: 'danger'})
         }
-        else if (nombre.value=="") {
+        if (!validateEmail(email.value)) {
+          UIkit.notification({message: 'Eh gato, escribi un mail legal', status: 'danger'})
+        }
+        if (nombre.value=="") {
          UIkit.notification({message: 'No completaste tu nombre', status: 'danger'})
         }
-        else if (nombre.value== "" && email.value==""){
-        UIkit.notification({message: 'No completaste tu nombre', status: 'danger'})
-        UIkit.notification({message: 'Dejaste el email vacio', status: 'danger'})
-        }
-        else {
-          false
-        }
+
+
 //si los datos son correctos, guardarlos//
       if (nombre.value != "") {
           document.querySelector("#botonLog").click()
@@ -91,6 +114,7 @@ window.addEventListener("load", function(){
           //cuando me logueo debo iniciar el array donde voy a guardar las pelis preferidas
           var arrayDePelisFavoritas = []
           console.log(arrayDePelisFavoritas);
+          window.sessionStorage.setItem('arrayDePelisFavoritas', JSON.stringify(arrayDePelisFavoritas))
         }
       }
 //si el campo de login ya esta completo saludar al usuario//
@@ -104,28 +128,19 @@ window.addEventListener("load", function(){
         nuevo.innerHTML = "Bienvenido " +  nombreUsuario +'<i class="fas fa-user"></i>'
         document.querySelector ("#botonLog").style.display = "none"
         document.querySelector(".favoritos").style.display = "block"
-      }
+        document.querySelector ("div.logout").classList.remove("display-none")
+        }
+        document.querySelector("#botonLogOut").onclick = function() {
+          window.sessionStorage.clear("usuario");
+          window.location.reload()
+        }
 
 
-function favoritos(id){
-  console.log(id);
-  alert ("me clickearon")
-  //primero reviso si hay alguna peli favorita en el array
-  if (arrayDePelisFavoritas.indexOf(id)===-1){
-  // en este caso no es favorita
-  // pusheo el id dentro del array
-    arrayDePelisFavoritas.push(id)
-    //guardo en session el array, como es un objeto debo transformarlo a string
-    window.sessionStorage.setItem("favorita",JSON.stringify(arrayDePelisFavoritas))
-  } else{
-    // esta peli ya es favorita, la saco del array
-    arrayDePelisFavoritas.splice(arrayDePelisFavoritas.indexOf(id),1)
-    //reemplazo el array que tenia la peli como favorita, por un array que ya no la tiene
-    window.sessionStorage.setItem("favorita",JSON.stringify(arrayDePelisFavoritas))
-  }
 
-  console.log(id);
-  console.log(JSON.parse(window.sessionStorage.getItem("favorita")))
+
+  function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
 
