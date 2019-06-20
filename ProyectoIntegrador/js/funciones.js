@@ -58,9 +58,6 @@ window.addEventListener("load", function(){
              document.querySelector(".laLista").innerHTML = laLista
              document.querySelector("#elVerMas").style.display = "block";
              document.querySelector("#vamos").style.display = "none";
-             document.querySelector("#recomendar").classList.remove("display-none")
-             document.querySelector("#reco").style.display = "none"
-
 
          fetch("https://api.themoviedb.org/3/movie/"+id+"/recommendations?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US&page=1")
          .then(function(respuesta){
@@ -78,7 +75,7 @@ window.addEventListener("load", function(){
              var fecha = arrayDePelis[i].release_date
              var puntos = arrayDePelis[i].vote_average
              if (i == 0) {
-               document.querySelector("#carrousel-recomendadas").innerHTML += '<li><div class="las-recomendadas"><a id="detalle" class= "posterC" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></a></div></li>'
+               document.querySelector("#carrousel-recomendadas").innerHTML = '<li><div class="las-recomendadas"><a id="detalle" class= "posterC" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></a></div></li>'
               }else {
                 document.querySelector("#carrousel-recomendadas").innerHTML += '<li><div class="las-recomendadas"><a id="detalle" class= "posterC" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></a></div></li>'
               }
@@ -89,6 +86,7 @@ window.addEventListener("load", function(){
            console.log(error);
            return console.log("Error" + error);
          })
+
      })
 
 

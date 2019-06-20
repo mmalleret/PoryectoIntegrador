@@ -6,7 +6,7 @@
 
 #modalCss{
  position: relative;
- 
+
 }
 .divBotones{
   overflow: hidden;
@@ -25,5 +25,4 @@
 }
 #reco{
   margin-top: 1%;
-  float: left;
 }
