@@ -10,4 +10,6 @@ document.querySelector(".form-buscar").onsubmit = function(e) {
       document.querySelector(".alert-light").style.display = "none"
     },3000)
   }}
+
+
 })

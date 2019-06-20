@@ -1,4 +1,7 @@
 /* footer */
+*{
+  box-sizing: border-box;
+}
 footer {
   background-color:#F9C719;
 }
@@ -131,8 +134,8 @@ h3.nombres-footer{
 }
 img.logo-tmdb{
   float: none;
-  width: 90px;
-  height: 34px;
+  width: 18%;
+  height: 50%;
   margin: 8px;
   position: absolute;
   right: -1px;
@@ -147,11 +150,11 @@ img.logo-tmdb{
   img.logo-footer{
     width: 10%;
     position: relative;
-    left: -26px;
+    left: -5%;
     top: 0;
   }
   li.footer{
-    height: 75px;
+    height: 10%;;
     width: 500px;
     position: relative;
     left: 318px;
@@ -167,9 +170,10 @@ img.logo-tmdb{
     position: relative;
   }
   img.logo-tmdb{
-    width: 115px;
-    height: 48px;
-    margin: 7px;
+    width: 18%;
+    height: 88%;
+    margin: 4px;
+    padding: 3px;
     position: absolute;
     right: -1px;
     bottom: -1px;

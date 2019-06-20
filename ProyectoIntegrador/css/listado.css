@@ -25,18 +25,9 @@ div.noMeFunciona {
 #modal-example {
   font-family: sans-serif;
 
-}
-
-@media only screen and (max-width:420px){
 
 }
-}
-@media only screen and (min-width:421px) and (max-width:800px){
-
-}
-
-
-h2.titulogenre {
+.titulogenre{
   font-family: sans-serif;
   font-size: 3vh;
   border-radius: 15px;
@@ -46,9 +37,40 @@ h2.titulogenre {
   background-color: black;
   padding: 1%;
   text-align: center;
-  width: 25%;
+  width: 28%;
   margin-top: 2%;
   margin-bottom: 2%;
   position: relative;
   left: 37.5%;
+}
+@media only screen and (max-width:420px){
+
+}
+}
+@media only screen and (min-width:421px) and (max-width:800px){
+
+}
+
+/*****MEDIA QUERIES*****/
+@media only screen and (max-width:420px){
+h2.titulogenre{
+  font-size: 3vh;
+  width: 60%;
+  position: relative;
+  left: 17%;
+  margin: 3%;
+}
+}
+@media only screen and (min-width:421px) and (max-width:800px){
+h2.titulogenre{
+  font-size:3.5vh;
+  width: 60%;
+  position: relative;
+  left: 17.5%;
+  margin:3%;
+}
+}
+
+@media only screen and (min-width:421px) and (max-width:800px){
+
 }

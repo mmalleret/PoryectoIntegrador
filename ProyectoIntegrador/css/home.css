@@ -66,7 +66,7 @@ h1.titulos-peliculas{
   background-color: black;
   padding: 1%;
   text-align: center;
-  width: 25%;
+  width: 28%;
   margin-top: 2%;
   margin-bottom: 2%;
   position: relative;
@@ -85,20 +85,19 @@ footer{
 /*****MEDIA QUERIES*****/
 @media only screen and (max-width:420px){
 h1.titulos-peliculas{
-  font-size: 4vh;
-  width: 83%;
+  font-size: 3vh;
+  width: 60%;
   position: relative;
-  left: 9%;
-  margin-top: 7%;
+  left: 17%;
+  margin: 3%;
 }
 }
 @media only screen and (min-width:421px) and (max-width:800px){
 h1.titulos-peliculas{
-  font-size:4vh;
+  font-size:3.5vh;
   width: 60%;
   position: relative;
-  left: 20.5%;
-  margin-top:5%;
-  margin-bottom: 5%;
+  left: 17.5%;
+  margin:3%;
 }
 }
