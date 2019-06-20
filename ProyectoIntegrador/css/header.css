@@ -15,6 +15,22 @@ nav img{
   top:-2px;
   left:-15px;
 }
+nav.navbar.navbar-expand-lg.navbar-light{
+  position: relative;
+}
+form.form-inline.my-2.my-lg-0.form-buscar{
+  position: absolute;
+  left: 65%;
+}
+ul.navbar-nav.mr-auto{
+  position: absolute;
+  left: 10%;
+}
+button#botonLog.btn.btn-outline-dark{
+  position: absolute;
+  left: 90%;
+  top:31%;
+}
 header form input{
   margin-left: 10px;
 }
@@ -76,20 +92,59 @@ header div.login button{
 
 /*alerta*/
 @media only screen and (max-width:420px){
+
+nav.navbar.navbar-expand-lg.navbar-light{
+ height: 150px;
+ position: relative;
+
+}
 nav img{
-    width: 20%;
-    height: 80% !important;
+    width: 23%;
+    height: 50% !important;
+    position: absolute;
+    top: 3px;
+    left: 2px;
   }
-/* .navbar-expand-lg .navbar-nav{
-  width: 70px;
+  button.navbar-toggler{
+      position: absolute;
+      top:20px;
+      left: 74px;
+      width: 12%;
+      height: 25%;
+  }
+  
+  form.form-inline.my-2.my-lg-0.form-buscar{
+    width: 40%;
+    /* position: relative;
+    left: 130px; */
+  }
+  i.fas.fa-search{
+    position: relative;
+    left: -60%;
+  }
+  input#buscador.form-control.mr-sm-2{
+    position:relative;
+    left: -50%;
+  }
+/*
+.dorpdown-menu{
+  height: 30px !important;
+  font-size: 5px !important;
 } */
-.contenedor-nav{
 
+/* a.nav-link{
+  height: 5px;
+}
+li.nav-item.dorpdown{
+  height: 30px;
+} */
+/* #navbarSupportedContent{
 
 }
-li.nav-item.active{
-  position: absolute;
-}
+/*  */
+/* div#navbarSupportedCntent.collapse.navbar-collapse.show{
+  height: 30px;
+} */ */
 }
 
 @media only screen and (min-width:421px) and (max-width:800px){
