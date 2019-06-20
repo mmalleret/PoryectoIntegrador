@@ -25,8 +25,24 @@ div.noMeFunciona {
 #modal-example {
   font-family: sans-serif;
 
-}
 
+}
+.titulogenre{
+  font-family: sans-serif;
+  font-size: 3vh;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 3px #F9C719;
+  color: #F9C719;
+  background-color: black;
+  padding: 1%;
+  text-align: center;
+  width: 28%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  position: relative;
+  left: 37.5%;
+}
 @media only screen and (max-width:420px){
 
 }
@@ -36,7 +52,7 @@ div.noMeFunciona {
 }
 
 
-h2.titulogenre {
+/* h2.titulogenre {
   font-family: sans-serif;
   font-size: 3vh;
   border-radius: 15px;
@@ -51,4 +67,4 @@ h2.titulogenre {
   margin-bottom: 2%;
   position: relative;
   left: 37.5%;
-}
+} */

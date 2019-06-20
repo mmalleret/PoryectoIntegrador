@@ -19,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
     <!-- //css// -->
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/favoritos.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 
@@ -130,11 +131,16 @@
 <!--header-->
     </header>
 
-    <section>
-      <div class="favs">
+  <section class="peliculas-favoritas">
+  <h1 class="favoritas">Tus Peliculas Favoritas</h1>
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true">
+        <ul id="favs" class="uk-slider-items uk-grid uk-grid-match" uk-height-viewport="offset-top: true; offset-bottom: 30">
+        </ul>
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+    </div>
+  </section>
 
-      </div>
-    </section>
     <div id="modal-example" uk-modal>
 
       <div class="alert alert-info" role="alert">

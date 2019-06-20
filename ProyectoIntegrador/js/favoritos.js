@@ -37,7 +37,7 @@ window.addEventListener("load", function(){
       var fecha = arrayDePelis[i].release_date
       var puntos = arrayDePelis[i].vote_average
 
-      document.querySelector(".favs").innerHTML +='<div class="pelis"><a class="poster" posArray="' + i + '" idPelicula="' + id + '" href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original/'+ poster +'" width= "300px" alt=""></a></div>'
+      document.querySelector("#favs").innerHTML +='<li><div class="pelis"><a class="poster" posArray="' + i + '" idPelicula="' + id + '" href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original/'+ poster +'" width= "300px" alt=""></a></div></li>'
 
     }
 
