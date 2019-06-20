@@ -59,17 +59,33 @@ window.addEventListener("load", function(){
              document.querySelector("#elVerMas").style.display = "block";
              document.querySelector("#vamos").style.display = "none";
 
-         // fetch("https://api.themoviedb.org/3/movie/"+id+"/recommendations?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US&page=1")
-         // .then(function(respuesta){
-         //   return respuesta.json()
-         // })
-         // .then(function(){
-         //
-         // })
-         // .catch(function(error){
-         //   console.log(error);
-         //   return console.log("Error" + error);
-         // })
+         fetch("https://api.themoviedb.org/3/movie/"+id+"/recommendations?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US&page=1")
+         .then(function(respuesta){
+           return respuesta.json()
+         })
+         .then(function(peliculas){
+           console.log(peliculas.results);
+           var arrayDePelis = peliculas.results
+           for(var i=0; i< arrayDePelis.length; i++){
+             var url= arrayDePelis[i].poster_path
+             console.log(url);
+             var titulo =  arrayDePelis[i].title
+             var id = arrayDePelis[i].id
+             var resumen = arrayDePelis[i].overview
+             var fecha = arrayDePelis[i].release_date
+             var puntos = arrayDePelis[i].vote_average
+             if (i == 0) {
+               document.querySelector("#carrousel-recomendadas").innerHTML += '<li><div class="las-recomendadas"><a id="detalle" class= "posterC" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+ url+'"></a></div></li>'
+              }else {
+                document.querySelector("#carrousel-recomendadas").innerHTML += '<li><div class="las-recomendadas"><a id="detalle" class= "posterC" posArray="' + i + '" idPelicula="' + id + '"href="#modal-example" uk-toggle><img src="https://image.tmdb.org/t/p/original'+url+'"></a></div></li>'
+              }
+           }
+
+         })
+         .catch(function(error){
+           console.log(error);
+           return console.log("Error" + error);
+         })
      })
 
 
@@ -128,6 +144,7 @@ window.addEventListener("load", function(){
         nuevo.innerHTML = "Bienvenido " +  nombreUsuario +'<i class="fas fa-user"></i>'
         document.querySelector ("#botonLog").style.display = "none"
         document.querySelector(".favoritos").style.display = "block"
+        document.querySelector("#elDivFav").classList.remove("display-none")
         document.querySelector ("div.logout").classList.remove("display-none")
         }
         document.querySelector("#botonLogOut").onclick = function() {
@@ -138,11 +155,12 @@ window.addEventListener("load", function(){
 
 
 
-  function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-  }
 
 
 
 })
+
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
