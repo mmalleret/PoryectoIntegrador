@@ -58,6 +58,9 @@ window.addEventListener("load", function(){
              document.querySelector(".laLista").innerHTML = laLista
              document.querySelector("#elVerMas").style.display = "block";
              document.querySelector("#vamos").style.display = "none";
+             document.querySelector("#recomendar").classList.remove("display-none")
+             document.querySelector("#reco").style.display = "none"
+
 
          fetch("https://api.themoviedb.org/3/movie/"+id+"/recommendations?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US&page=1")
          .then(function(respuesta){
