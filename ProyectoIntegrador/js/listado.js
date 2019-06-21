@@ -41,11 +41,12 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=11f88aad97603b2da806d
         document.querySelector("#elVerMas").style.display = "none"
         document.querySelector("#vamos").style.display = "block"
         document.querySelector("#vamos").setAttribute("idPelicula", id)
-        document.querySelector(".elDivFav").innerHTML ='<button class="miBoton" id="botonFavoritos" name="' + id+ '"> &#9733; </button>'
+        document.querySelector("#elDivFav").innerHTML ='<button class="miBoton" id="botonFavoritos" name="' + id+ '"> &#9733; </button>'
         var boton = document.querySelector('#botonFavoritos')
+        // document.querySelector ("#botonFavoritos").style.display= "none"
         boton.addEventListener("click", function(){
           var id = boton.name
-          alert ("me clickearon")
+
           var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
           console.log(arrayDePelisFavoritas);
           //primero reviso si hay alguna peli favorita en el array
@@ -65,13 +66,16 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=11f88aad97603b2da806d
           console.log(id);
           console.log(JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas")))
         })
-        })
-    }
-    })
 
-.catch(function(error){
-  console.log("Error" + error)
-})
+             })
+    }
+
+
+  })
+   .catch(function(error){
+     console.log("Error" + error)
+  })
+
 fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")
 
 .then(function(infoGenero){
