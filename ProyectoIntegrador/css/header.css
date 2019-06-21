@@ -118,44 +118,20 @@ nav img{
       height: 25%;
   }
 
-  span.navbar-toggler-icon{
-   position: relative;
-   left: -9px;
-  }
   form.form-inline.my-2.my-lg-0.form-buscar{
     width: 40%;
     /* position: relative;
     left: 130px; */
-}
+  }
   i.fas.fa-search{
-    display: none;
-    /* position: relative;
-    left: -60%; */
+    position: relative;
+    left: -60%;
   }
   input#buscador.form-control.mr-sm-2{
     position:relative;
-    left: -85px;
-    bottom: 10px;
-    height: 28px
+    left: -50%;
   }
-  button.btn.btn-outline-dark{
-    position: relative;
-    left: 46px;
-    top: -38px;
-    height: 28px;
-    width: 60px;
-    font-size: 11px;
-  }
-  button#botonLog.btn.btn-outline-dark{
-    position: relative;
-    left: 233px;
-    top:-47px;
-  }
-  ul.navbar-nav.mr-auto{
-    position: absolute;
-    left: 23px;
-    top:52px;
-  }
+  
 /*
 .dorpdown-menu{
   height: 30px !important;
