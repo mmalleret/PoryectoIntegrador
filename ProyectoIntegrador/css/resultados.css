@@ -21,3 +21,15 @@ div.pelis {
   font-family: sans-serif;
 
 }
+@media only screen and (max-width:420px){
+  div.resultspelis{
+    width: 100%;
+  }
+
+}
+@media only screen and (min-width:421px) and (max-width:800px){
+  div.resultspelis{
+    width: 100%;
+  }
+
+}
