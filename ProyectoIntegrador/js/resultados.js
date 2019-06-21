@@ -47,7 +47,6 @@ window.onload = function(){
              // document.querySelector ("#botonFavoritos").style.display= "none"
              boton.addEventListener("click", function(){
                var id = boton.name
-               alert ("La película ya fue agregada a tu lista de Favoritos!")
 
                var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
                console.log(arrayDePelisFavoritas);
@@ -58,17 +57,18 @@ window.onload = function(){
                  arrayDePelisFavoritas.push(id)
                  //guardo en session el array, como es un objeto debo transformarlo a string
                  window.sessionStorage.setItem("arrayDePelisFavoritas",JSON.stringify(arrayDePelisFavoritas))
+                 alert("tu pelicula ha sido agregada a favoritos")
                } else{
                  // esta peli ya es favorita, la saco del array
                  arrayDePelisFavoritas.splice(arrayDePelisFavoritas.indexOf(id),1)
                  //reemplazo el array que tenia la peli como favorita, por un array que ya no la tiene
                  window.sessionStorage.setItem("arrayDePelisFavoritas",JSON.stringify(arrayDePelisFavoritas))
+                 alert("tu pelicula ha sido sacada de favoritos")
                }
 
                console.log(id);
                console.log(JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas")))
              })
-
                   })
          }
 

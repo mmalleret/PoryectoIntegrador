@@ -38,19 +38,19 @@ window.addEventListener("load", function(){
             // for (var i=0; i< arrayDeGeneros.length; i++){
             //   generos+= arrayDeGeneros[i].name + " "
             // }
-             document.querySelector(".laFecha").innerHTML = '<p>Fecha de Estreno: '+ fecha + '</p>'
-             document.querySelector(".puntosPeli").innerHTML = '<p>Puntuación: '+ puntos + '</p>'
+             document.querySelector(".laFecha").innerHTML = '<p><i class="fas fa-clock"></i> Fecha de Estreno: '+ fecha + '</p>'
+             document.querySelector(".puntosPeli").innerHTML = '<p><i class="fas fa-star"></i> Puntuación: '+ puntos + '</p>'
              document.querySelector(".iframe").innerHTML ='<div class="iframe">'+ urlTrailer + '</div>'
 
              if (idioma == undefined) {
                document.querySelector(".generoDe").style.display = "none"
              }
              else {
-               document.querySelector(".generoDe").innerHTML = '<p class=idioma>Lenguaje original: '+idioma+'</p>'
+               document.querySelector(".generoDe").innerHTML = '<p class=idioma><i class="fas fa-globe"></i> Lenguaje original: '+idioma+'</p>'
              }
-             var laLista = '<p class=laLista> Generos:</p><ul>'
+             var laLista = '<p class=laLista><u>Generos</u>:</p><ul class="fa-ul">'
              for (var i=0; i< arrayDeGeneros.length; i++){
-                laLista += '<li class="listaDeModal"><a id="anchor" href="listado.html?genero='+arrayDeGeneros[i].id+'&nombre=' + arrayDeGeneros[i].name + '">' + arrayDeGeneros[i].name + '</a></li>'
+                laLista += '<li class="listaDeModal"><span class="fa-li" ><i class="fas fa-ticket-alt"></i></span><a id="anchor" href="listado.html?genero='+arrayDeGeneros[i].id+'&nombre=' + arrayDeGeneros[i].name + '">' + arrayDeGeneros[i].name + '</a></li>'
              }
 
              laLista += '</ul>'

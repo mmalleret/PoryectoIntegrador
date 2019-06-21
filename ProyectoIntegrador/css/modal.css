@@ -71,4 +71,29 @@ div.las-recomendadas{
   float: left;
 
 }
+h2.h2{
+  font-size: 1em;
+}
+.el-titular{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#vamos{
+
+  font-size: .800rem;
+
+}
+#cancelar{
+  font-size: .800rem;
+  margin-left: 0%;
+}
+.el-resumen .laFecha .puntosPeli .laLista .deLaLista {
+  font-size: 0.5em;
+}
+
+#modal-example{
+  height: 100vh;
+  font-family: 'Merriweather', serif;
+
+}
 }
