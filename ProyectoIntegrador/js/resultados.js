@@ -47,6 +47,7 @@ window.onload = function(){
              // document.querySelector ("#botonFavoritos").style.display= "none"
              boton.addEventListener("click", function(){
                var id = boton.name
+               alert ("La película ya fue agregada a tu lista de Favoritos!")
 
                var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
                console.log(arrayDePelisFavoritas);

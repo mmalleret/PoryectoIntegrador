@@ -61,7 +61,8 @@ window.addEventListener("load", function(){
         var boton = document.querySelector('#botonFavoritos')
         boton.addEventListener("click", function(){
           var id = boton.name
-          alert ("me clickearon")
+          alert ("La película ya fue agregada a tu lista de Favoritos!")
+          
           var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
           console.log(arrayDePelisFavoritas);
           //primero reviso si hay alguna peli favorita en el array
