@@ -43,15 +43,12 @@ div.noMeFunciona {
   position: relative;
   left: 37.5%;
 }
-@media only screen and (max-width:420px){
 
-}
-}
-@media only screen and (min-width:421px) and (max-width:800px){
-
-}
 
 /*****MEDIA QUERIES*****/
+
+
+
 @media only screen and (max-width:420px){
 h2.titulogenre{
   font-size: 3vh;
@@ -60,7 +57,16 @@ h2.titulogenre{
   left: 17%;
   margin: 3%;
 }
+
+div.general{
+  width: 90%;
+  margin-bottom: 20px;
 }
+
+
+}
+
+
 @media only screen and (min-width:421px) and (max-width:800px){
 h2.titulogenre{
   font-size:3.5vh;
@@ -69,8 +75,10 @@ h2.titulogenre{
   left: 17.5%;
   margin:3%;
 }
+div.general{
+  width: 30%;
+  margin-bottom: 20px;
 }
 
-@media only screen and (min-width:421px) and (max-width:800px){
 
 }
