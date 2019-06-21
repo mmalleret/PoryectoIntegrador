@@ -1,7 +1,7 @@
 #vamos{
   float:left;
-  margin-top: 1%;
-  margin-right: 1%;
+  margin-top: 2%;
+
 }
 
 #modalCss{
@@ -21,7 +21,7 @@
 #cancelar{
   float: left;
   margin-right: 1%;
-  margin-top: 1%;
+  margin-top: 2%;
 }
 #reco{
   margin-top: 1%;
@@ -32,5 +32,20 @@
 #anchor{
   text-decoration: none;
   color: black;
+
+}
+
+
+
+div.recomendadas h2{
+font-family: sans-serif;
+font-size: 3vh;
+padding: 1%;
+align-items: center;
+text-align: center;
+margin-top: 2%;
+border-style: solid;
+position: relative;
+
 
 }
