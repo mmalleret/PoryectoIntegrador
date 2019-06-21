@@ -122,14 +122,14 @@ nav img{
     position: absolute;
     top: 3px;
     left: -10px;
-    opacity: 0.3;
+    opacity: 0.17;
     z-index: 0;
 
   }
   button.navbar-toggler{
       position: absolute;
       left: -10px;
-      width: 20%;
+      width: 50%;
       height: 99%;
       border: transparent;
 
@@ -188,14 +188,12 @@ nav img{
    padding: 0;
    margin-top: -10%;
    font-size: 3vh;
-   font-weight: bold;
-   left:-10px;
+
  }
-a#navbarDropdown.nav-link.dropdown-toggle{
- color: rgba(0, 0, 0, 0.9);
- position: relative;
- z-index: 3000!important;
-}
+ .navbar-nav {
+   margin: -21%;
+ }
+
 div.modal-content{
  width: 90%;
 }
@@ -218,6 +216,7 @@ z-index: 3000!important;
 .navbar-nav .dropdown-menu{
 position: absolute;
 }
+
 }
 
 
@@ -233,53 +232,52 @@ position: absolute;
      height: 50% !important;
      position: absolute;
      top: 3px;
-     left: 2px;
+     left: 29%;
    }
  form.form-inline.my-2.my-lg-0.form-buscar{
    position: absolute;
-   left: 59%;
+   left: 29%;
    bottom: 10%;
  }
  button.navbar-toggler{
      position: absolute;
-     top:20px;
-     left: 87px;
-     width: 5%;
-     height: 26%;
+     top: 12px;
+     left: 16px;
+    height: 28%;
  }
 
- span.navbar-toggler-icon{
-  position: relative;
-  left: -9px;
-
- }
  #botonLog{
    position: absolute;
-   right: 2%;
-   top:14%;
+   right: 6%;
+   top:60%;
 
 }
 #botonLogOut{
   position: absolute;
-  right: 2%;
-  top:14%;
+  right: 6%;
+  top:60%;
 }
 .nombreDeUsuario{
   font-size: 2vh;
   width: 31%;
   position: absolute;
   top:11%;
-  left: 55%;
+  left: 41%;
   bottom: 57%;
 }
 #navbarDropdown{
   padding: 0;
   margin-top: -5%;
-  font-size: 2vh;
+  
 }
 a#navbarDropdown.nav-link.dropdown-toggle{
   position: relative;
   z-index: 1000;
+}
+ul.navbar-nav.mr-auto {
+    position: absolute;
+    left: 19.5px;
+    top: 33%;
 }
 .navbar-nav .dropdown-menu{
   position: absolute;
