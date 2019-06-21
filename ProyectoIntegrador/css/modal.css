@@ -26,3 +26,11 @@
 #reco{
   margin-top: 1%;
 }
+.listaDeModal{
+  list-style: none;
+}
+#anchor{
+  text-decoration: none;
+  color: black;
+
+}

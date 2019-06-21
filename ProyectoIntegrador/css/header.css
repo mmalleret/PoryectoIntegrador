@@ -26,9 +26,14 @@ ul.navbar-nav.mr-auto{
   position: absolute;
   left: 10%;
 }
-button#botonLog.btn.btn-outline-dark{
+#botonLog{
   position: absolute;
-  left: 90%;
+  right: 5%;
+  top:31%;
+}
+#botonLogOut{
+  position: absolute;
+  right: 5%;
   top:31%;
 }
 header form input{
@@ -112,7 +117,7 @@ nav img{
       width: 12%;
       height: 25%;
   }
-  
+
   form.form-inline.my-2.my-lg-0.form-buscar{
     width: 40%;
     /* position: relative;

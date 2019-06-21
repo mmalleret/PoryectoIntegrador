@@ -43,7 +43,7 @@ window.addEventListener("load", function(){
          // document.querySelector ("#botonFavoritos").style.display= "none"
          boton.addEventListener("click", function(){
            var id = boton.name
-           alert ("La pelicula ya esta agregada a tu lista!")
+
            var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
            console.log(arrayDePelisFavoritas);
            //primero reviso si hay alguna peli favorita en el array
@@ -116,7 +116,7 @@ fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=9fe1abda2acd785b6fc8
         var boton = document.querySelector('#botonFavoritos')
         boton.addEventListener("click", function(){
           var id = boton.name
-          alert ("Tu pelicula ya fue agregada a la lista de Favoritos!)
+          alert ("Tu pelicula ya fue agregada a la lista de Favoritos!")
           var arrayDePelisFavoritas = JSON.parse(window.sessionStorage.getItem("arrayDePelisFavoritas"))
           console.log(arrayDePelisFavoritas);
           //primero reviso si hay alguna peli favorita en el array

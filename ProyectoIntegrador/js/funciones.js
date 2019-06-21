@@ -50,7 +50,7 @@ window.addEventListener("load", function(){
              }
              var laLista = '<p class=laLista> Generos:</p><ul>'
              for (var i=0; i< arrayDeGeneros.length; i++){
-                laLista += '<li><a href="listado.html?genero='+arrayDeGeneros[i].id+'&nombre=' + arrayDeGeneros[i].name + '">' + arrayDeGeneros[i].name + '</a></li>'
+                laLista += '<li class="listaDeModal"><a id="anchor" href="listado.html?genero='+arrayDeGeneros[i].id+'&nombre=' + arrayDeGeneros[i].name + '">' + arrayDeGeneros[i].name + '</a></li>'
              }
 
              laLista += '</ul>'
