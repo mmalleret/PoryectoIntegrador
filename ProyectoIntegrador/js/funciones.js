@@ -142,7 +142,7 @@ window.addEventListener("load", function(){
       function mostrarInfoLogin(nombreUsuario) {
         var nuevo = document.querySelector ('.nombreDeUsuario')
         nuevo.style.backgroundColor = "black"
-        nuevo.innerHTML = "Bienvenido " +  nombreUsuario +'<i class="fas fa-user"></i>'
+        nuevo.innerHTML = "Bienvenido " +  nombreUsuario +" "+'<i class="fas fa-user"></i>'
         document.querySelector ("#botonLog").style.display = "none"
         document.querySelector(".favoritos").style.display = "block"
         document.querySelector("#elDivFav").classList.remove("display-none")

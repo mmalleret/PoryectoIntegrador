@@ -215,6 +215,10 @@ div.modal-content{
 #ultimo{
 z-index: 3000!important;
 }
+.navbar-nav .dropdown-menu{
+position: absolute;
+}
+}
 
 
 
@@ -276,6 +280,9 @@ z-index: 3000!important;
 a#navbarDropdown.nav-link.dropdown-toggle{
   position: relative;
   z-index: 1000;
+}
+.navbar-nav .dropdown-menu{
+  position: absolute;
 }
 }
 .uk-notification {
