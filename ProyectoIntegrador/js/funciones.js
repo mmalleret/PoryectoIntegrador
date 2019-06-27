@@ -1,4 +1,6 @@
 window.addEventListener("load", function(){
+//FUNCIONES JS
+
 // trailer pelicula
     var urlParams = new URLSearchParams(window.location.search);
     var idPeliculas = urlParams.get("id");

@@ -1,4 +1,5 @@
 window.onload = function(){
+  //BUSCADOR JS. CUANDO BUSCO UNA PELI 
   var queryString = new URLSearchParams(window.location.search);
 
      var buscar = queryString.get("buscador");

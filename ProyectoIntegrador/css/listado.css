@@ -1,10 +1,10 @@
 main {
-  overflow: hidden;
+  overflow:hidden;
 }
 
 div .generos {
   float: left;
-  margin:2%;
+  margin: 2%;
 }
 
 div.general{

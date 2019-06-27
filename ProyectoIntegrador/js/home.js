@@ -1,4 +1,5 @@
 window.addEventListener("load", function(){
+//HOME JS
 
  //API peliculas populares//
  fetch("https://api.themoviedb.org/3/movie/popular?api_key=9fe1abda2acd785b6fc8d949de634904&language=en-US&page=1")

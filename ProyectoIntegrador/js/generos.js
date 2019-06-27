@@ -1,4 +1,4 @@
-//PELICULAS POR GENERO
+//PELICULAS POR GENERO JS
 
 window.addEventListener("load",function(){
 fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=11f88aad97603b2da806d195dbb8daed&language=en-US")

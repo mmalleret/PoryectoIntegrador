@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-// boton de busqueda//
+// botón de busqueda//
 
 document.querySelector(".form-buscar").onsubmit = function(e) {
   var buscadorInput = document.querySelector("#buscador")

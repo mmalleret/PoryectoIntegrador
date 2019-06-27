@@ -35,6 +35,7 @@ fetch("https://api.themoviedb.org/3/discover/movie?api_key=11f88aad97603b2da806d
         pelicula = arrayDePelis[pos]
         titulo = pelicula.title
         resumen = pelicula.overview
+        //Lo que aparece en el modal
 
         document.querySelector(".el-titular").innerHTML = titulo
         document.querySelector(".el-resumen").innerHTML = resumen

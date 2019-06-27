@@ -9,7 +9,7 @@ div.resultspelis{
 
 div.pelis {
   float: left;
-  margin-bottom: 20px;
+  margin-bottom:20px;
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
